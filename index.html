@@ -3,78 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNEL_RECOVERY_V1.0</title>
+    <title>KERNEL_V1.0</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow: hidden; }
-        #console { width: 90%; max-width: 700px; border: 1px solid #0f0; padding: 20px; position: relative; background: rgba(0, 10, 0, 0.9); }
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; }
         
-        /* Effetto Scanline/Glitch leggero */
-        .glitch { animation: scan 1s infinite; opacity: 0.9; }
-        @keyframes scan { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+        /* Intestazione Superiore */
+        #header-top { width: 100%; text-align: center; padding: 10px; font-size: 1.2rem; letter-spacing: 5px; border-bottom: 1px solid #040; background: rgba(0, 10, 0, 0.9); z-index: 10; }
 
-        .line { margin-bottom: 5px; font-size: 14px; display: block; }
+        #console { width: 90%; max-width: 700px; padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; z-index: 5; }
         
-        /* Area Input e Cursore */
-        .input-area { display: flex; align-items: center; margin-top: 15px; color: #fff; position: relative; }
-        #cmd { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; /* Nasconde il cursore di default */ }
-        
-        .cursor { display: inline-block; width: 10px; height: 18px; background: #0f0; margin-left: 2px; animation: blink 0.8s infinite; vertical-align: middle; }
+        .line { margin-bottom: 5px; font-size: 14px; }
+        .input-area { display: flex; align-items: center; margin-top: 15px; color: #fff; }
+        #cmd { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; }
+        .cursor { width: 10px; height: 18px; background: #0f0; animation: blink 0.8s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        #database { display: none; }
-        
-        /* Effetto sblocco */
-        .success-flash { animation: flash 0.4s ease-out; }
-        @keyframes flash { from { background: #0f0; } to { background: #000; } }
+        /* Effetto Codice Sotto */
+        #footer-bottom { width: 100%; padding: 20px; text-align: center; border-top: 1px solid #040; position: relative; overflow: hidden; background: #000; }
+        .big-title { font-size: 3rem; font-weight: 900; letter-spacing: 10px; position: relative; z-index: 2; color: #0f0; text-shadow: 0 0 10px #0f0; }
+        .code-fill { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 8px; color: #020; line-height: 8px; overflow: hidden; z-index: 1; user-select: none; }
 
-        .loading-bar-container { width: 100%; height: 2px; background: #020; margin: 15px 0; display: none; }
-        #bar { width: 0%; height: 100%; background: #0f0; transition: width 1.5s ease-in-out; }
-        
-        .cap { opacity: 0; transition: opacity 0.6s; margin-top: 12px; border-left: 2px solid #0f0; padding-left: 10px; font-size: 13px; }
+        #database { display: none; }
+        .cap { opacity: 0; transition: opacity 0.5s; margin-top: 10px; border-left: 2px solid #0f0; padding-left: 10px; }
+        .success-flash { animation: flash 0.3s ease-out; }
+        @keyframes flash { from { background: #0f0; } to { background: #000; } }
     </style>
 </head>
 <body id="main-body">
+
+    <div id="header-top">KERNEL</div>
+
     <div id="console">
         <div id="login-screen">
-            <span class="line glitch">> KERNEL_INIT... [OK]</span>
             <span class="line">> ANALISI HARDWARE: COMPUTER_DI_CARNE</span>
             <span class="line">> STATO: SOFTWARE_ETICO_CORROTTO</span>
-            <br>
-            <span class="line" style="color: #666;">> INSERIRE CHIAVE DI DECODIFICA:</span>
             <div class="input-area">
                 <span>ROOT@KERNEL:~$ </span>
                 <input type="text" id="cmd" autofocus autocomplete="off">
-                <div id="cursor" class="cursor"></div>
+                <div class="cursor"></div>
             </div>
         </div>
 
         <div id="database">
-            <span class="line">> CHIAVE ACCETTATA. PRIVILEGI DI ROOT OTTENUTI.</span>
-            <div id="bar-container" class="loading-bar-container">
-                <div id="bar"></div>
-            </div>
+            <span class="line">> ACCESSO ROOT ESEGUITO. CARICAMENTO PROTOCOLLI...</span>
             <div id="content"></div>
         </div>
     </div>
 
-    <script>
-        const input = document.getElementById('cmd');
-        const cursor = document.getElementById('cursor');
-        const chapters = [
-            "<span style='color:#0f0'>[SYSTEM]</span> MANUALE DI RIPARAZIONE CARICATO.",
-            "<b>PREFAZIONE:</b> Boot Up (Il computer di carne)",
-            "<b>CAP. 1 & 2:</b> Firewall Umani e Protocollo DROP",
-            "<b>CAP. 3:</b> La Teoria del Frontend (Falsità)",
-            "<b>CAP. 4:</b> Virus del Denaro e Comando sudo",
-            "<br><span style='color:#fff; background:#040;'> > SISTEMA IN ATTESA DI LOG_07... </span>"
-        ];
+    <div id="footer-bottom">
+        <div class="code-fill" id="code-bg"></div>
+        <div class="big-title">CODICE OMBRA</div>
+    </div>
 
-        // Gestione cursore: lo sposta a destra del testo mentre scrivi
-        input.addEventListener('input', () => {
-            // Un piccolo trucco per far sembrare che il cursore segua il testo
-            const valLength = input.value.length;
-            cursor.style.marginLeft = `2px`;
-        });
+    <script>
+        // Genera il riempimento a codice per il footer
+        const bg = document.getElementById('code-bg');
+        const codeChars = "01101010010101010110101011101010101010101010110101010101010101010101010";
+        for(let i=0; i<50; i++) {
+            bg.innerText += codeChars.repeat(10) + "\n";
+        }
+
+        const input = document.getElementById('cmd');
+        const chapters = [
+            "<b>PREFAZIONE:</b> Boot Up (Hardware di carne)",
+            "<b>CAP. 1 & 2:</b> Firewall e Protocollo DROP",
+            "<b>CAP. 3:</b> Teoria del Frontend",
+            "<b>CAP. 4:</b> Virus del Denaro",
+            "<b>STATUS:</b> In attesa di LOG_07..."
+        ];
 
         input.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
@@ -82,7 +78,7 @@
                     unlock();
                 } else {
                     input.value = '';
-                    alert("ACCESSO NEGATO: CHIAVE ERRATA.");
+                    alert("ACCESSO NEGATO");
                 }
             }
         });
@@ -91,10 +87,7 @@
             document.getElementById('main-body').classList.add('success-flash');
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('database').style.display = 'block';
-            document.getElementById('bar-container').style.display = 'block';
             
-            setTimeout(() => { document.getElementById('bar').style.width = '100%'; }, 100);
-
             let i = 0;
             const interval = setInterval(() => {
                 if (i < chapters.length) {
@@ -107,10 +100,8 @@
                 } else {
                     clearInterval(interval);
                 }
-            }, 900);
+            }, 700);
         }
-
-        // Mantiene il focus sull'input
         document.addEventListener('click', () => input.focus());
     </script>
 </body>
