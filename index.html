@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNEL_V1.0_ROOT</title>
+    <title>KERNEL_V1.1_FINAL</title>
     <style>
-        :root { --neon-green: #00ff41; --dark-green: #003b00; }
-        
-        /* Reset e Base */
-        body { background: #000; color: var(--neon-green); font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; }
+        :root { --neon-green: #00ff41; --error-red: #ff0000; }
+        body { background: #000; color: var(--neon-green); font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; text-transform: uppercase; }
         
         /* Header */
-        #header-top { width: 100%; text-align: center; padding: 20px 0; font-size: 1.8rem; font-weight: bold; letter-spacing: 12px; border-bottom: 2px solid var(--neon-green); background: #000; z-index: 10; box-shadow: 0 0 10px var(--dark-green); }
+        #header-top { width: 100%; text-align: center; padding: 15px 0; font-size: 1.5rem; letter-spacing: 10px; border-bottom: 2px solid var(--neon-green); z-index: 10; background: #000; }
 
-        /* Console Centrale */
+        /* Console */
         #console { width: 90%; max-width: 800px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; z-index: 5; }
+        .line { margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 1px; }
         
-        .line { margin-bottom: 12px; font-size: 1.1rem; color: var(--neon-green); }
-        
-        /* Area Input forzata in Verde */
-        .input-area { display: flex; align-items: center; margin-top: 20px; color: var(--neon-green); border-top: 1px solid var(--dark-green); padding-top: 20px; }
-        #cmd { background: transparent; border: none; color: var(--neon-green); font-family: inherit; font-size: 1.3rem; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; }
-        
-        .cursor { width: 12px; height: 24px; background: var(--neon-green); animation: blink 0.8s infinite; box-shadow: 0 0 8px var(--neon-green); }
+        .input-area { display: flex; align-items: center; margin-top: 20px; border-top: 1px solid var(--neon-green); padding-top: 20px; }
+        #cmd { background: transparent; border: none; color: var(--neon-green); font-family: inherit; font-size: 1.2rem; outline: none; width: 100%; caret-color: transparent; }
+        .cursor { width: 10px; height: 20px; background: var(--neon-green); animation: blink 0.8s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* Footer */
-        #footer-bottom { width: 100%; height: 180px; position: relative; border-top: 2px solid var(--neon-green); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .big-title { font-size: 3.5rem; font-weight: 900; letter-spacing: 8px; z-index: 5; color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green); text-align: center; line-height: 1; }
-        .code-fill { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 10px; color: #002200; line-height: 10px; overflow: hidden; z-index: 1; opacity: 0.8; white-space: pre-wrap; }
+        /* Messaggio Errore */
+        #error-msg { color: var(--error-red); display: none; font-weight: bold; margin-top: 10px; animation: shake 0.2s infinite; }
+        @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(5px); } 50% { transform: translateX(-5px); } 100% { transform: translateX(0); } }
 
-        /* Database sbloccato forzato in Verde */
-        #database { display: none; padding: 10px; }
-        .cap { opacity: 0; transition: opacity 0.8s ease; margin-top: 18px; border-left: 3px solid var(--neon-green); padding-left: 15px; font-size: 1.2rem; color: var(--neon-green); }
-        
-        /* Effetto lampo verde al successo */
-        .success-flash { animation: flash 0.4s ease-out; }
-        @keyframes flash { from { background: var(--neon-green); } to { background: #000; } }
+        /* Footer Dinamico Matrix */
+        #footer-bottom { width: 100%; height: 150px; position: relative; border-top: 2px solid var(--neon-green); display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
+        .big-title { font-size: 3rem; font-weight: 900; letter-spacing: 5px; z-index: 5; text-shadow: 0 0 15px var(--neon-green); text-align: center; line-height: 1.1; }
+        #matrix-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 10px; color: #003300; opacity: 0.6; z-index: 1; white-space: pre; pointer-events: none; line-height: 10px; }
+
+        #database { display: none; }
+        .cap { opacity: 0; transition: opacity 0.6s; margin-top: 15px; border-left: 3px solid var(--neon-green); padding-left: 15px; }
+        b { color: #fff; text-shadow: 0 0 5px var(--neon-green); }
     </style>
 </head>
 <body id="main-body">
@@ -45,77 +40,81 @@
 
     <div id="console">
         <div id="login-screen">
-            <span class="line">> ANALISI HARDWARE: CORPO_BIOLOGICO</span>
-            <span class="line">> STATO: SOFTWARE_ETICO_CORROTTO</span>
+            <div class="line">> ANALISI HARDWARE: COMPUTER_DI_CARNE</div>
+            <div class="line">> STATO: SOFTWARE_ETICO_CORROTTO</div>
             <br>
-            <span class="line" style="font-weight: bold; letter-spacing: 2px;">> INSERIRE CHIAVE DI DECODIFICA:</span>
+            <div class="line" style="font-weight: bold;">> INSERIRE CHIAVE DI DECODIFICA:</div>
             
             <div class="input-area">
-                <span style="font-weight: bold;">ROOT@KERNEL:~$ </span>
+                <span>ROOT@KERNEL:~$ </span>
                 <input type="text" id="cmd" autofocus autocomplete="off" spellcheck="false">
                 <div class="cursor"></div>
             </div>
+            <div id="error-msg">> ACCESSO NEGATO: CHIAVE ERRATA</div>
         </div>
 
         <div id="database">
-            <span class="line" style="font-weight: bold;">> ACCESSO ROOT ESEGUITO. PROTOCOLLI:</span>
+            <div class="line" style="font-weight: bold;">> ACCESSO ROOT ESEGUITO. PROTOCOLLI:</div>
             <div id="content"></div>
         </div>
     </div>
 
     <div id="footer-bottom">
-        <div class="code-fill" id="code-bg"></div>
+        <div id="matrix-bg"></div>
         <div class="big-title">CODICE<br>OMBRA</div>
     </div>
 
     <script>
-        const bg = document.getElementById('code-bg');
-        let codes = "";
-        for(let i=0; i<1500; i++) { codes += Math.floor(Math.random()*2); }
-        bg.innerText = codes;
+        // Effetto Flusso Dati Matrix
+        const matrix = document.getElementById('matrix-bg');
+        function genMatrix() {
+            let str = "";
+            const rows = 15;
+            const cols = window.innerWidth / 8;
+            for(let i=0; i<rows; i++) {
+                for(let j=0; j<cols; j++) { str += Math.floor(Math.random()*2); }
+                str += "\n";
+            }
+            matrix.innerText = str;
+        }
+        setInterval(genMatrix, 80);
 
         const input = document.getElementById('cmd');
-        const loginScreen = document.getElementById('login-screen');
-        const database = document.getElementById('database');
-        const mainBody = document.getElementById('main-body');
-        const content = document.getElementById('content');
-
+        const error = document.getElementById('error-msg');
         const chapters = [
-            "<b>PREFAZIONE:</b> Boot Up (Il computer di carne)",
-            "<b>CAP. 1 & 2:</b> Firewall e Protocollo DROP",
-            "<b>CAP. 3:</b> Teoria del Frontend (Social Interface)",
-            "<b>CAP. 4:</b> Virus del Denaro e sudo su",
-            "<b>STATUS:</b> In attesa di LOG_07..."
+            "<b>PREFAZIONE:</b> Boot Up (L'hardware di carne)",
+            "<b>CAP. 1 & 2:</b> Firewall Umani e Protocollo DROP",
+            "<b>CAP. 3:</b> Teoria del Frontend (L'interfaccia Sociale)",
+            "<b>CAP. 4:</b> Virus del Denaro // sudo su --bypass_moral_logic",
+            "<br><span style='background: var(--neon-green); color: #000; padding: 2px 5px;'> STATUS: IN ATTESA DI LOG_07... </span>"
         ];
 
-        input.addEventListener('keydown', function (e) {
+        input.addEventListener('keydown', function(e) {
             if (e.key === 'Enter') {
-                const passwordData = input.value.trim().toUpperCase();
-                if (passwordData === "ENTROPIA") {
+                if (input.value.trim().toUpperCase() === "ENTROPIA") {
                     unlock();
                 } else {
                     input.value = '';
+                    error.style.display = 'block';
+                    setTimeout(() => { error.style.display = 'none'; }, 2000);
                 }
             }
         });
 
         function unlock() {
-            mainBody.classList.add('success-flash');
-            loginScreen.style.display = 'none';
-            database.style.display = 'block';
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('database').style.display = 'block';
             let i = 0;
             const interval = setInterval(() => {
                 if (i < chapters.length) {
                     const div = document.createElement('div');
                     div.className = 'cap';
                     div.innerHTML = chapters[i];
-                    content.appendChild(div);
-                    setTimeout(() => { div.style.opacity = '1'; }, 100);
+                    document.getElementById('content').appendChild(div);
+                    setTimeout(() => { div.style.opacity = '1'; }, 50);
                     i++;
-                } else {
-                    clearInterval(interval);
-                }
-            }, 800);
+                } else { clearInterval(interval); }
+            }, 700);
         }
 
         document.addEventListener('click', () => input.focus());
