@@ -6,48 +6,75 @@
     <title>KERNEL_RECOVERY_V1.0</title>
     <style>
         body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow: hidden; }
-        #console { width: 90%; max-width: 700px; border: 1px solid #0f0; padding: 20px; position: relative; }
-        .glitch { animation: scan 0.5s infinite; text-shadow: 1px 0 red, -1px 0 blue; }
-        @keyframes scan { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+        #console { width: 90%; max-width: 700px; border: 1px solid #0f0; padding: 20px; position: relative; background: rgba(0, 10, 0, 0.9); }
+        
+        /* Effetto Scanline/Glitch leggero */
+        .glitch { animation: scan 1s infinite; opacity: 0.9; }
+        @keyframes scan { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+
         .line { margin-bottom: 5px; font-size: 14px; display: block; }
-        .input-area { display: flex; margin-top: 15px; color: #fff; }
-        input { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; }
+        
+        /* Area Input e Cursore */
+        .input-area { display: flex; align-items: center; margin-top: 15px; color: #fff; position: relative; }
+        #cmd { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; /* Nasconde il cursore di default */ }
+        
+        .cursor { display: inline-block; width: 10px; height: 18px; background: #0f0; margin-left: 2px; animation: blink 0.8s infinite; vertical-align: middle; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         #database { display: none; }
-        .success-flash { animation: flash 0.3s cubic-bezier(.5, 0, 1, 1); }
+        
+        /* Effetto sblocco */
+        .success-flash { animation: flash 0.4s ease-out; }
         @keyframes flash { from { background: #0f0; } to { background: #000; } }
-        .loading-bar { width: 0%; height: 2px; background: #0f0; margin: 10px 0; transition: width 2s; }
-        .cap { opacity: 0; transition: opacity 0.5s; margin-top: 10px; border-left: 2px solid #040; padding-left: 10px; }
+
+        .loading-bar-container { width: 100%; height: 2px; background: #020; margin: 15px 0; display: none; }
+        #bar { width: 0%; height: 100%; background: #0f0; transition: width 1.5s ease-in-out; }
+        
+        .cap { opacity: 0; transition: opacity 0.6s; margin-top: 12px; border-left: 2px solid #0f0; padding-left: 10px; font-size: 13px; }
     </style>
 </head>
 <body id="main-body">
     <div id="console">
         <div id="login-screen">
             <span class="line glitch">> KERNEL_INIT... [OK]</span>
-            <span class="line">> ANALISI HARDWARE: CORROTTO.</span>
-            <span class="line">> RICHIESTA CHIAVE DI DECODIFICA.</span>
+            <span class="line">> ANALISI HARDWARE: COMPUTER_DI_CARNE</span>
+            <span class="line">> STATO: SOFTWARE_ETICO_CORROTTO</span>
+            <br>
+            <span class="line" style="color: #666;">> INSERIRE CHIAVE DI DECODIFICA:</span>
             <div class="input-area">
                 <span>ROOT@KERNEL:~$ </span>
                 <input type="text" id="cmd" autofocus autocomplete="off">
+                <div id="cursor" class="cursor"></div>
             </div>
         </div>
 
         <div id="database">
-            <span class="line">> CHIAVE ACCETTATA. ESECUZIONE SUDO...</span>
-            <div id="bar" class="loading-bar"></div>
-            <div id="content">
-                </div>
+            <span class="line">> CHIAVE ACCETTATA. PRIVILEGI DI ROOT OTTENUTI.</span>
+            <div id="bar-container" class="loading-bar-container">
+                <div id="bar"></div>
+            </div>
+            <div id="content"></div>
         </div>
     </div>
 
     <script>
         const input = document.getElementById('cmd');
+        const cursor = document.getElementById('cursor');
         const chapters = [
-            "<b>PREFAZIONE:</b> Boot Up (Computer di carne)",
-            "<b>CAP. 1 & 2:</b> Firewall e Protocollo DROP",
-            "<b>CAP. 3:</b> Teoria del Frontend (Falsità sociale)",
-            "<b>CAP. 4:</b> Virus del Denaro e Comando Sudo",
-            "<b>STATUS:</b> In attesa di LOG_07..."
+            "<span style='color:#0f0'>[SYSTEM]</span> MANUALE DI RIPARAZIONE CARICATO.",
+            "<b>PREFAZIONE:</b> Boot Up (Il computer di carne)",
+            "<b>CAP. 1 & 2:</b> Firewall Umani e Protocollo DROP",
+            "<b>CAP. 3:</b> La Teoria del Frontend (Falsità)",
+            "<b>CAP. 4:</b> Virus del Denaro e Comando sudo",
+            "<br><span style='color:#fff; background:#040;'> > SISTEMA IN ATTESA DI LOG_07... </span>"
         ];
+
+        // Gestione cursore: lo sposta a destra del testo mentre scrivi
+        input.addEventListener('input', () => {
+            // Un piccolo trucco per far sembrare che il cursore segua il testo
+            const valLength = input.value.length;
+            cursor.style.marginLeft = `2px`;
+        });
 
         input.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
@@ -55,7 +82,7 @@
                     unlock();
                 } else {
                     input.value = '';
-                    alert("ACCESSO NEGATO");
+                    alert("ACCESSO NEGATO: CHIAVE ERRATA.");
                 }
             }
         });
@@ -64,11 +91,10 @@
             document.getElementById('main-body').classList.add('success-flash');
             document.getElementById('login-screen').style.display = 'none';
             document.getElementById('database').style.display = 'block';
+            document.getElementById('bar-container').style.display = 'block';
             
-            // Effetto barra di caricamento
             setTimeout(() => { document.getElementById('bar').style.width = '100%'; }, 100);
 
-            // Caricamento progressivo capitoli
             let i = 0;
             const interval = setInterval(() => {
                 if (i < chapters.length) {
@@ -81,8 +107,10 @@
                 } else {
                     clearInterval(interval);
                 }
-            }, 800); // Appare un capitolo ogni 0.8 secondi
+            }, 900);
         }
+
+        // Mantiene il focus sull'input
         document.addEventListener('click', () => input.focus());
     </script>
 </body>
