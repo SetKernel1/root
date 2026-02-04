@@ -3,82 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNEL_USER_ERROR_V1.0</title>
+    <title>KERNEL_RECOVERY_V1.0</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box; }
-        #console { width: 100%; max-width: 800px; border: 1px solid #0f0; padding: 25px; background: rgba(0, 5, 0, 0.95); box-shadow: 0 0 30px rgba(0, 255, 0, 0.1); }
-        .line { margin-bottom: 5px; font-size: 13px; opacity: 0.9; }
-        .input-area { display: flex; color: #fff; margin-top: 15px; border-top: 1px solid #040; padding-top: 15px; }
+        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; overflow: hidden; }
+        #console { width: 90%; max-width: 700px; border: 1px solid #0f0; padding: 20px; position: relative; }
+        .glitch { animation: scan 0.5s infinite; text-shadow: 1px 0 red, -1px 0 blue; }
+        @keyframes scan { 0% { opacity: 1; } 50% { opacity: 0.8; } 100% { opacity: 1; } }
+        .line { margin-bottom: 5px; font-size: 14px; display: block; }
+        .input-area { display: flex; margin-top: 15px; color: #fff; }
         input { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; }
-        .success-box { border: 1px double #0f0; padding: 15px; margin-top: 20px; background: #001100; }
-        .cap-title { color: #fff; font-weight: bold; margin-top: 10px; display: block; }
-        .cap-desc { color: #0a0; font-size: 11px; margin-bottom: 5px; padding-left: 10px; border-left: 1px solid #040; }
-        .hidden { display: none; }
-        .error { color: #f00; font-size: 12px; margin-top: 10px; }
+        #database { display: none; }
+        .success-flash { animation: flash 0.3s cubic-bezier(.5, 0, 1, 1); }
+        @keyframes flash { from { background: #0f0; } to { background: #000; } }
+        .loading-bar { width: 0%; height: 2px; background: #0f0; margin: 10px 0; transition: width 2s; }
+        .cap { opacity: 0; transition: opacity 0.5s; margin-top: 10px; border-left: 2px solid #040; padding-left: 10px; }
     </style>
 </head>
-<body>
+<body id="main-body">
     <div id="console">
         <div id="login-screen">
-            <div class="line">> KERNEL_OS: USER_ERROR_V1.0_BOOT</div>
-            <div class="line">> IDENTIFICAZIONE HARDWARE... [OK]</div>
-            <div class="line">> ANALISI INTEGRITÀ DATI: FALLITA.</div>
-            <br>
-            <div class="line" style="color:#666">> RICHIESTA CHIAVE DI DECODIFICA PER ACCESSO ROOT.</div>
-            <div class="line" style="color:#444; font-size: 10px;">(Recuperare stringa di sblocco nei log di sistema)</div>
-            
+            <span class="line glitch">> KERNEL_INIT... [OK]</span>
+            <span class="line">> ANALISI HARDWARE: CORROTTO.</span>
+            <span class="line">> RICHIESTA CHIAVE DI DECODIFICA.</span>
             <div class="input-area">
                 <span>ROOT@KERNEL:~$ </span>
                 <input type="text" id="cmd" autofocus autocomplete="off">
             </div>
-            <div id="error-msg" class="error hidden">> CHIAVE ERRATA. ACCESSO NEGATO.</div>
         </div>
 
-        <div id="database" class="hidden">
-            <div class="line">> VALIDAZIONE CHIAVE... [OK]</div>
-            <div class="line">> ESCALATION PRIVILEGI ESEGUITA.</div>
-            
-            <div class="success-box">
-                <span class="cap-title">PREFAZIONE: Prima del Boot Up</span>
-                <div class="cap-desc">Sostituzione software etico per computer di carne.</div>
-
-                <span class="cap-title">CAP. 1 & 2: Firewall e Sicurezza</span>
-                <div class="cap-desc">Protocollo DROP e gestione Blacklist. (In caricamento...)</div>
-
-                <span class="cap-title">CAP. 3: Teoria del Frontend</span>
-                <div class="cap-desc">UI sociale vs Backend opportunista. (Criptato)</div>
-
-                <span class="cap-title">CAP. 4: Il Virus del Denaro</span>
-                <div class="cap-desc">Sovrascrittura driver morali universali. (Criptato)</div>
-                
-                <div class="line" style="margin-top:15px; color:#888;">[... Altri capitoli in fase di indicizzazione ...]</div>
-            </div>
-            <br>
-            <div class="line">> SISTEMA PRONTO. ATTENDERE LOG_07 PER AGGIORNAMENTI.</div>
+        <div id="database">
+            <span class="line">> CHIAVE ACCETTATA. ESECUZIONE SUDO...</span>
+            <div id="bar" class="loading-bar"></div>
+            <div id="content">
+                </div>
         </div>
     </div>
 
     <script>
         const input = document.getElementById('cmd');
-        const loginScreen = document.getElementById('login-screen');
-        const database = document.getElementById('database');
-        const errorMsg = document.getElementById('error-msg');
+        const chapters = [
+            "<b>PREFAZIONE:</b> Boot Up (Computer di carne)",
+            "<b>CAP. 1 & 2:</b> Firewall e Protocollo DROP",
+            "<b>CAP. 3:</b> Teoria del Frontend (Falsità sociale)",
+            "<b>CAP. 4:</b> Virus del Denaro e Comando Sudo",
+            "<b>STATUS:</b> In attesa di LOG_07..."
+        ];
 
         input.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
-                const secret = "ENTROPIA"; // La chiave rimane solo nel codice
-                if (input.value.trim().toUpperCase() === secret) {
-                    loginScreen.classList.add('hidden');
-                    database.classList.remove('hidden');
-                    document.body.style.background = "#000800";
+                if (input.value.trim().toUpperCase() === 'ENTROPIA') {
+                    unlock();
                 } else {
                     input.value = '';
-                    errorMsg.classList.remove('hidden');
-                    setTimeout(() => { errorMsg.classList.add('hidden'); }, 2000);
+                    alert("ACCESSO NEGATO");
                 }
             }
         });
-        // Forza il focus sull'input anche se cliccano altrove
+
+        function unlock() {
+            document.getElementById('main-body').classList.add('success-flash');
+            document.getElementById('login-screen').style.display = 'none';
+            document.getElementById('database').style.display = 'block';
+            
+            // Effetto barra di caricamento
+            setTimeout(() => { document.getElementById('bar').style.width = '100%'; }, 100);
+
+            // Caricamento progressivo capitoli
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < chapters.length) {
+                    const div = document.createElement('div');
+                    div.className = 'cap';
+                    div.innerHTML = chapters[i];
+                    document.getElementById('content').appendChild(div);
+                    setTimeout(() => { div.style.opacity = '1'; }, 50);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 800); // Appare un capitolo ogni 0.8 secondi
+        }
         document.addEventListener('click', () => input.focus());
     </script>
 </body>
