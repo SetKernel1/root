@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNEL_V1.0</title>
+    <title>KERNEL_V1.0_ROOT</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; }
+        :root { --neon-green: #00ff41; --dark-green: #003b00; }
+        body { background: #000; color: var(--neon-green); font-family: 'Courier New', Courier, monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; }
         
-        /* Intestazione Superiore */
-        #header-top { width: 100%; text-align: center; padding: 10px; font-size: 1.2rem; letter-spacing: 5px; border-bottom: 1px solid #040; background: rgba(0, 10, 0, 0.9); z-index: 10; }
+        /* Header Superiore */
+        #header-top { width: 100%; text-align: center; padding: 20px 0; font-size: 1.8rem; font-weight: bold; letter-spacing: 12px; border-bottom: 2px solid var(--dark-green); background: rgba(0, 0, 0, 0.9); z-index: 10; text-transform: uppercase; }
 
-        #console { width: 90%; max-width: 700px; padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; z-index: 5; }
+        /* Area Centrale Console */
+        #console { width: 90%; max-width: 800px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; z-index: 5; padding: 10px; }
         
-        .line { margin-bottom: 5px; font-size: 14px; }
-        .input-area { display: flex; align-items: center; margin-top: 15px; color: #fff; }
-        #cmd { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 16px; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; }
-        .cursor { width: 10px; height: 18px; background: #0f0; animation: blink 0.8s infinite; }
+        .line { margin-bottom: 12px; font-size: 1.1rem; line-height: 1.4; }
+        .input-area { display: flex; align-items: center; margin-top: 25px; color: #fff; border-top: 1px solid var(--dark-green); padding-top: 20px; }
+        #cmd { background: transparent; border: none; color: #fff; font-family: inherit; font-size: 1.3rem; outline: none; width: 100%; text-transform: uppercase; caret-color: transparent; }
+        
+        /* Cursore Potenziato */
+        .cursor { width: 12px; height: 24px; background: var(--neon-green); animation: blink 0.8s infinite; box-shadow: 0 0 8px var(--neon-green); }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* Effetto Codice Sotto */
-        #footer-bottom { width: 100%; padding: 20px; text-align: center; border-top: 1px solid #040; position: relative; overflow: hidden; background: #000; }
-        .big-title { font-size: 3rem; font-weight: 900; letter-spacing: 10px; position: relative; z-index: 2; color: #0f0; text-shadow: 0 0 10px #0f0; }
-        .code-fill { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 8px; color: #020; line-height: 8px; overflow: hidden; z-index: 1; user-select: none; }
+        /* Footer con Riempimento */
+        #footer-bottom { width: 100%; height: 180px; position: relative; border-top: 2px solid var(--dark-green); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .big-title { font-size: 3.5rem; font-weight: 900; letter-spacing: 8px; z-index: 5; color: var(--neon-green); text-shadow: 0 0 20px rgba(0, 255, 65, 0.5); text-align: center; line-height: 1; }
+        .code-fill { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 10px; color: #001a00; line-height: 10px; overflow: hidden; z-index: 1; user-select: none; opacity: 0.6; }
 
-        #database { display: none; }
-        .cap { opacity: 0; transition: opacity 0.5s; margin-top: 10px; border-left: 2px solid #0f0; padding-left: 10px; }
-        .success-flash { animation: flash 0.3s ease-out; }
-        @keyframes flash { from { background: #0f0; } to { background: #000; } }
+        /* Sezione Sbloccata */
+        #database { display: none; padding: 10px; }
+        .cap { opacity: 0; transition: opacity 0.8s ease; margin-top: 18px; border-left: 3px solid var(--neon-green); padding-left: 15px; font-size: 1.2rem; color: #fff; }
+        
+        .success-flash { animation: flash 0.4s ease-out; }
+        @keyframes flash { from { background: var(--neon-green); } to { background: #000; } }
     </style>
 </head>
 <body id="main-body">
@@ -35,74 +41,15 @@
 
     <div id="console">
         <div id="login-screen">
-            <span class="line">> ANALISI HARDWARE: COMPUTER_DI_CARNE</span>
+            <span class="line" style="color: #fff;">> ANALISI HARDWARE: CORPO_BIOLOGICO</span>
             <span class="line">> STATO: SOFTWARE_ETICO_CORROTTO</span>
+            <span class="line" style="color: #555; font-size: 0.9rem;">> RICHIESTA CHIAVE DECODIFICA...</span>
             <div class="input-area">
-                <span>ROOT@KERNEL:~$ </span>
+                <span style="color: var(--neon-green); font-weight: bold;">ROOT@KERNEL:~$ </span>
                 <input type="text" id="cmd" autofocus autocomplete="off">
                 <div class="cursor"></div>
             </div>
         </div>
 
         <div id="database">
-            <span class="line">> ACCESSO ROOT ESEGUITO. CARICAMENTO PROTOCOLLI...</span>
-            <div id="content"></div>
-        </div>
-    </div>
-
-    <div id="footer-bottom">
-        <div class="code-fill" id="code-bg"></div>
-        <div class="big-title">CODICE OMBRA</div>
-    </div>
-
-    <script>
-        // Genera il riempimento a codice per il footer
-        const bg = document.getElementById('code-bg');
-        const codeChars = "01101010010101010110101011101010101010101010110101010101010101010101010";
-        for(let i=0; i<50; i++) {
-            bg.innerText += codeChars.repeat(10) + "\n";
-        }
-
-        const input = document.getElementById('cmd');
-        const chapters = [
-            "<b>PREFAZIONE:</b> Boot Up (Hardware di carne)",
-            "<b>CAP. 1 & 2:</b> Firewall e Protocollo DROP",
-            "<b>CAP. 3:</b> Teoria del Frontend",
-            "<b>CAP. 4:</b> Virus del Denaro",
-            "<b>STATUS:</b> In attesa di LOG_07..."
-        ];
-
-        input.addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                if (input.value.trim().toUpperCase() === 'ENTROPIA') {
-                    unlock();
-                } else {
-                    input.value = '';
-                    alert("ACCESSO NEGATO");
-                }
-            }
-        });
-
-        function unlock() {
-            document.getElementById('main-body').classList.add('success-flash');
-            document.getElementById('login-screen').style.display = 'none';
-            document.getElementById('database').style.display = 'block';
-            
-            let i = 0;
-            const interval = setInterval(() => {
-                if (i < chapters.length) {
-                    const div = document.createElement('div');
-                    div.className = 'cap';
-                    div.innerHTML = chapters[i];
-                    document.getElementById('content').appendChild(div);
-                    setTimeout(() => { div.style.opacity = '1'; }, 50);
-                    i++;
-                } else {
-                    clearInterval(interval);
-                }
-            }, 700);
-        }
-        document.addEventListener('click', () => input.focus());
-    </script>
-</body>
-</html>
+            <span class="line" style="color: var(--neon-green); font-weight: bold;">> ACCESSO ROOT ESEGUITO. PROTO
