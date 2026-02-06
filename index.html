@@ -6,109 +6,70 @@
     <title>IDENTIFICAZIONE_SISTEMA</title>
     <style>
         body, html {
-            height: 100%;
-            margin: 0;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Courier New', monospace;
-            overflow: hidden;
-            color: #0F0;
+            height: 100%; margin: 0; background-color: #000;
+            display: flex; justify-content: center; align-items: center;
+            font-family: 'Courier New', monospace; overflow: hidden; color: #0F0;
         }
 
-        /* Contenitore Immagine - Forza il caricamento */
+        /* Il Teschio - Forza il caricamento dall'URL di GitHub */
         .skull-bg {
             position: absolute;
-            width: 95%;
-            max-width: 600px;
-            aspect-ratio: 1/1;
-            /* Se il teschio non appare, controlla che il file si chiami esattamente così */
-            background-image: url('1000010447.png');
-            background-repeat: no-repeat;
-            background-position: center;
+            width: 90%; max-width: 600px; aspect-ratio: 1/1;
+            background: url('https://raw.githubusercontent.com/setkernel1/setkernel1.github.io/main/1000010447.png') no-repeat center center;
             background-size: contain;
             z-index: 1;
         }
 
-        /* Box di Input */
         .input-area {
-            position: absolute;
-            bottom: 25%;
-            width: 260px;
-            text-align: center;
-            z-index: 10;
+            position: absolute; bottom: 25%; width: 260px;
+            text-align: center; z-index: 10;
         }
 
         input {
-            background: transparent;
-            border: none;
-            border-bottom: 2px solid #0F0;
-            color: #FFF;
-            font-family: 'Courier New', monospace;
-            font-size: 1.3rem;
-            text-align: center;
-            width: 100%;
-            outline: none;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            padding: 8px 0;
+            background: rgba(0,0,0,0.6); border: none; border-bottom: 2px solid #0F0;
+            color: #FFF; font-family: 'Courier New', monospace; font-size: 1.3rem;
+            text-align: center; width: 100%; outline: none;
+            text-transform: uppercase; letter-spacing: 5px; padding: 10px 0;
             text-shadow: 0 0 10px #0F0;
         }
 
-        .status-msg {
-            margin-top: 15px;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px #0F0;
-        }
+        .status { margin-top: 15px; font-size: 0.75rem; letter-spacing: 2px; }
     </style>
 </head>
-<body onclick="unlockAudio()">
+<body onclick="playMusic()">
 
-    <audio id="bg-music" loop>
+    <audio id="ambient-audio" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
     </audio>
 
     <div class="skull-bg"></div>
     
     <div class="input-area">
-        <input type="password" id="input-pass" placeholder="PASSWORD" autofocus autocomplete="off">
-        <div id="msg" class="status-msg">SISTEMA_STABILE // DATA_06.02</div>
+        <input type="password" id="pass-field" placeholder="PASSWORD" autofocus autocomplete="off">
+        <div id="status-text" class="status">VIBRAZIONE_RILEVATA // 06.02</div>
     </div>
 
     <script>
-        const field = document.getElementById('input-pass');
-        const msg = document.getElementById('msg');
-        const audio = document.getElementById('bg-music');
-        let playing = false;
+        const field = document.getElementById('pass-field');
+        const status = document.getElementById('status-text');
+        const audio = document.getElementById('ambient-audio');
 
-        // La musica parte solo dopo un tocco sullo schermo (regola dei browser)
-        function unlockAudio() {
-            if(!playing) {
-                audio.volume = 0.2;
-                audio.play();
-                playing = true;
-            }
+        function playMusic() {
+            audio.volume = 0.3;
+            audio.play().catch(() => {});
         }
 
-        field.addEventListener('keypress', function (e) {
+        field.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 if (field.value.toUpperCase() === "SINAPSI") {
-                    msg.innerText = "ACCESSO_CONFERMATO. INGRESSO...";
-                    document.body.style.transition = "opacity 1.5s";
+                    status.innerText = "ACCESSO_CONFERMATO...";
+                    document.body.style.transition = "opacity 1s";
                     document.body.style.opacity = "0";
-                    setTimeout(() => {
-                        window.location.href = "prefazione.html";
-                    }, 1500);
+                    setTimeout(() => { window.location.href = "prefazione.html"; }, 1000);
                 } else {
-                    msg.innerText = "ERRORE_DI_SISTEMA";
-                    msg.style.color = "#F00";
+                    status.innerText = "ERRORE_DI_SISTEMA";
                     field.value = "";
-                    setTimeout(() => {
-                        msg.innerText = "SISTEMA_STABILE // DATA_06.02";
-                        msg.style.color = "#0F0";
-                    }, 1500);
+                    setTimeout(() => { status.innerText = "VIBRAZIONE_RILEVATA // 06.02"; }, 1500);
                 }
             }
         });
