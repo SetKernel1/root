@@ -6,16 +6,34 @@
     <title>IL_VARCO</title>
     <style>
         body { background: #000; color: #0F0; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        input { background: #000; color: #0F0; border: 1px solid #0F0; padding: 10px; text-align: center; font-family: monospace; outline: none; text-transform: uppercase; }
-        button { background: #0F0; color: #000; border: none; padding: 10px 20px; margin-top: 15px; cursor: pointer; font-weight: bold; font-family: monospace; }
-        .glitch { font-size: 0.8em; margin-bottom: 20px; opacity: 0.7; }
+        input { background: #000; color: #0F0; border: 1px solid #0F0; padding: 12px; text-align: center; font-family: monospace; outline: none; width: 200px; font-size: 16px; }
+        button { background: #0F0; color: #000; border: none; padding: 12px 25px; margin-top: 20px; cursor: pointer; font-weight: bold; font-family: monospace; font-size: 16px; }
+        .info { font-size: 0.8em; margin-bottom: 20px; color: #060; }
     </style>
 </head>
 <body>
-    <div class="glitch">> ATTESA_AUTENTICAZIONE...</div>
-    <input type="text" id="pass" placeholder="INSERISCI_CHIAVE">
-    <button onclick="check()">ESEGUI</button>
+
+    <div class="info">> IN ATTESA DI CHIAVE...</div>
+    
+    <input type="text" id="pass" placeholder="SCRIVI QUI" autocomplete="off">
+    
+    <button id="btn-esegui">ESEGUI</button>
 
     <script>
-        function check() {
-            var p = document.getElementById
+        // Usiamo un metodo più moderno e sicuro per il click
+        document.getElementById('btn-esegui').addEventListener('click', function() {
+            var inputDigitato = document.getElementById('pass').value;
+            // Puliamo la parola da spazi e rendiamola maiuscola
+            var chiave = inputDigitato.toUpperCase().trim();
+            
+            if(chiave === 'ENTROPIA') {
+                localStorage.setItem('varco_aperto', 'true');
+                window.location.href = 'prefazione.html';
+            } else {
+                alert('ACCESSO NEGATO: CHIAVE ERRATA');
+            }
+        });
+    </script>
+
+</body>
+</html>
