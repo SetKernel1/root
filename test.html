@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PREFAZIONE_LOG_06</title>
     <style>
-        body { background: #000; color: #0F0; font-family: monospace; padding: 20px; line-height: 1.6; display: flex; justify-content: center; }
-        .container { max-width: 600px; width: 100%; }
+        body { 
+            background: #000; 
+            color: #0F0; 
+            font-family: 'Courier New', monospace; 
+            padding: 20px; 
+            line-height: 1.6; 
+            display: flex; 
+            justify-content: center; 
+            margin: 0;
+        }
+        .container { 
+            max-width: 600px; 
+            width: 100%; 
+            padding-top: 40px;
+        }
         
-        /* Header e Tasto */
+        /* Header e Tasto Audio */
         .header { text-align: center; margin-bottom: 50px; }
-        h1 { letter-spacing: 10px; text-shadow: 0 0 10px #0F0; margin-bottom: 20px; }
+        h1 { letter-spacing: 10px; text-shadow: 0 0 10px #0F0; margin-bottom: 20px; font-size: 2em; }
         
         #music-toggle {
             display: inline-block;
@@ -28,11 +41,25 @@
         #audio-status { font-size: 10px; color: #060; margin-top: 10px; letter-spacing: 2px; }
 
         /* Dialogo */
-        .dialogo { border-left: 1px solid #040; padding-left: 20px; margin-top: 40px; }
-        .carne { color: #888; margin-bottom: 25px; }
+        .dialogo { 
+            border-left: 1px solid #040; 
+            padding-left: 20px; 
+            margin-top: 40px; 
+            margin-bottom: 60px;
+        }
+        .carne { color: #888; margin-bottom: 25px; font-style: italic; }
         .kernel { color: #0F0; margin-bottom: 25px; font-weight: bold; }
         
-        .meta { color: #040; font-size: 0.8em; margin-top: 60px; text-align: center; border-top: 1px dashed #040; padding-top: 20px; }
+        /* Footer dinamico */
+        .meta { 
+            color: #040; 
+            font-size: 0.8em; 
+            text-align: center; 
+            border-top: 1px dashed #040; 
+            padding-top: 30px; 
+            line-height: 1.8;
+        }
+        .loading-hint { font-size: 0.7em; opacity: 0.6; }
     </style>
 </head>
 <body>
@@ -71,7 +98,11 @@
         </div>
     </div>
 
-    <div class="meta">--- FINE_TRASMISSIONE_LOG_06 ---</div>
+    <div class="meta">
+        --- CONNESSIONE STABILE. LOG_06 IN FASE DI DECRIPTATURA... ---
+        <br>
+        <span class="loading-hint">[ IL VERO CONTENUTO È OLTRE IL SILENZIO ]</span>
+    </div>
 </div>
 
 <audio id="audio-kernel" loop>
@@ -85,7 +116,7 @@
 
     toggle.addEventListener('click', () => {
         if (audio.paused) {
-            audio.play();
+            audio.play().catch(e => console.log("Audio play blocked by browser"));
             toggle.innerHTML = "■";
             toggle.style.color = "#0F0";
             toggle.style.borderColor = "#0F0";
