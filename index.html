@@ -17,22 +17,25 @@
             color: #0F0;
         }
 
-        /* Il Teschio: ho aggiunto un link diretto per sicurezza */
-        .skull-container {
+        /* Contenitore Immagine - Forza il caricamento */
+        .skull-bg {
             position: absolute;
-            width: 90%;
+            width: 95%;
             max-width: 600px;
             aspect-ratio: 1/1;
-            background: url('1000010447.png') no-repeat center center;
+            /* Se il teschio non appare, controlla che il file si chiami esattamente così */
+            background-image: url('1000010447.png');
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: contain;
             z-index: 1;
         }
 
-        /* Area di inserimento */
-        .input-box {
+        /* Box di Input */
+        .input-area {
             position: absolute;
             bottom: 25%;
-            width: 250px;
+            width: 260px;
             text-align: center;
             z-index: 10;
         }
@@ -43,64 +46,68 @@
             border-bottom: 2px solid #0F0;
             color: #FFF;
             font-family: 'Courier New', monospace;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             text-align: center;
             width: 100%;
             outline: none;
             text-transform: uppercase;
             letter-spacing: 5px;
-            padding: 10px 0;
-            text-shadow: 0 0 8px #0F0;
+            padding: 8px 0;
+            text-shadow: 0 0 10px #0F0;
         }
 
-        .status {
+        .status-msg {
             margin-top: 15px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
-            text-transform: uppercase;
+            text-shadow: 0 0 5px #0F0;
         }
     </style>
 </head>
-<body onclick="attivaAudio()">
+<body onclick="unlockAudio()">
 
-    <audio id="kernel-voice" loop>
+    <audio id="bg-music" loop>
         <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="skull-container"></div>
+    <div class="skull-bg"></div>
     
-    <div class="input-box">
-        <input type="password" id="pass-field" placeholder="PASSWORD" autofocus autocomplete="off">
-        <div id="status-text" class="status">SISTEMA_STABILE // DATA_06.02</div>
+    <div class="input-area">
+        <input type="password" id="input-pass" placeholder="PASSWORD" autofocus autocomplete="off">
+        <div id="msg" class="status-msg">SISTEMA_STABILE // DATA_06.02</div>
     </div>
 
     <script>
-        const passField = document.getElementById('pass-field');
-        const statusText = document.getElementById('status-text');
-        const audio = document.getElementById('kernel-voice');
+        const field = document.getElementById('input-pass');
+        const msg = document.getElementById('msg');
+        const audio = document.getElementById('bg-music');
+        let playing = false;
 
-        // I browser bloccano l'audio finché non interagisci
-        function attivaAudio() {
-            audio.volume = 0.2;
-            audio.play().catch(() => {});
+        // La musica parte solo dopo un tocco sullo schermo (regola dei browser)
+        function unlockAudio() {
+            if(!playing) {
+                audio.volume = 0.2;
+                audio.play();
+                playing = true;
+            }
         }
 
-        passField.addEventListener('keypress', function (e) {
+        field.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
-                if (passField.value.toUpperCase() === "SINAPSI") {
-                    statusText.innerText = "ACCESSO_CONFERMATO...";
+                if (field.value.toUpperCase() === "SINAPSI") {
+                    msg.innerText = "ACCESSO_CONFERMATO. INGRESSO...";
                     document.body.style.transition = "opacity 1.5s";
                     document.body.style.opacity = "0";
                     setTimeout(() => {
                         window.location.href = "prefazione.html";
                     }, 1500);
                 } else {
-                    statusText.innerText = "ERRORE_SINCRO";
-                    statusText.style.color = "#F00";
-                    passField.value = "";
+                    msg.innerText = "ERRORE_DI_SISTEMA";
+                    msg.style.color = "#F00";
+                    field.value = "";
                     setTimeout(() => {
-                        statusText.innerText = "SISTEMA_STABILE // DATA_06.02";
-                        statusText.style.color = "#0F0";
+                        msg.innerText = "SISTEMA_STABILE // DATA_06.02";
+                        msg.style.color = "#0F0";
                     }, 1500);
                 }
             }
