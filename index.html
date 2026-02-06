@@ -3,125 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KERNEL_V1.1_TOTAL_GREEN</title>
+    
+    <script data-goatcounter="https://setkernel1.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+
     <style>
-        :root { --neon-green: #00ff41; --error-red: #ff0000; --dark-green: #003300; }
-        
-        body { background: #000; color: var(--neon-green); font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: space-between; min-height: 100vh; margin: 0; overflow: hidden; text-transform: uppercase; }
-        
-        /* Header */
-        #header-top { width: 100%; text-align: center; padding: 15px 0; font-size: 1.5rem; letter-spacing: 10px; border-bottom: 2px solid var(--neon-green); z-index: 10; background: #000; }
-
-        /* Console */
-        #console { width: 90%; max-width: 800px; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; z-index: 5; }
-        .line { margin-bottom: 10px; font-size: 1.1rem; letter-spacing: 1px; color: var(--neon-green); }
-        
-        .input-area { display: flex; align-items: center; margin-top: 20px; border-top: 1px solid var(--neon-green); padding-top: 20px; }
-        #cmd { background: transparent; border: none; color: var(--neon-green); font-family: inherit; font-size: 1.2rem; outline: none; width: 100%; caret-color: transparent; }
-        .cursor { width: 10px; height: 20px; background: var(--neon-green); animation: blink 0.8s infinite; box-shadow: 0 0 5px var(--neon-green); }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-
-        /* Messaggio Errore */
-        #error-msg { color: var(--error-red); display: none; font-weight: bold; margin-top: 10px; animation: shake 0.2s infinite; }
-        @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(5px); } 50% { transform: translateX(-5px); } 100% { transform: translateX(0); } }
-
-        /* Footer Dinamico Matrix */
-        #footer-bottom { width: 100%; height: 150px; position: relative; border-top: 2px solid var(--neon-green); display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
-        .big-title { font-size: 3rem; font-weight: 900; letter-spacing: 5px; z-index: 5; text-shadow: 0 0 15px var(--neon-green); text-align: center; line-height: 1.1; color: var(--neon-green); }
-        #matrix-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; font-size: 10px; color: var(--dark-green); opacity: 0.6; z-index: 1; white-space: pre; pointer-events: none; line-height: 10px; }
-
-        /* Database */
-        #database { display: none; }
-        .cap { opacity: 0; transition: opacity 0.6s; margin-top: 15px; border-left: 3px solid var(--neon-green); padding-left: 15px; color: var(--neon-green); }
-        b { color: var(--neon-green); text-shadow: 0 0 3px var(--neon-green); }
-        
-        .status-box { display: inline-block; border: 1px solid var(--neon-green); padding: 5px 10px; margin-top: 20px; color: var(--neon-green); }
+        body { background:#000; color:#fff; font-family:monospace; margin:0; display:flex; flex-direction:column; align-items:center; padding: 60px 20px; line-height:1.6; }
+        .word { font-size:2.5em; font-weight:bold; letter-spacing:10px; color:#0F0; border:1px solid #0F0; padding:15px; box-shadow: 0 0 20px #0F0; margin-bottom:60px; text-align:center; }
+        .dialogo { max-width:500px; text-align:justify; }
+        .kernel { color:#0F0; margin-bottom:25px; border-left: 2px solid #0F0; padding-left: 15px; }
+        .carne { color:#888; margin-bottom:25px; font-style: italic; border-left: 2px solid #444; padding-left: 15px; }
+        .system { color:#060; font-size:0.8em; margin:40px 0; text-align:center; text-transform: uppercase; letter-spacing: 2px; }
+        .footer { color: #030; font-size: 0.7em; margin-top: 50px; text-align: center; }
     </style>
 </head>
-<body id="main-body">
+<body>
 
-    <div id="header-top">KERNEL</div>
+    <div class="word">SINAPSI</div>
 
-    <div id="console">
-        <div id="login-screen">
-            <div class="line">> ANALISI HARDWARE: COMPUTER_DI_CARNE</div>
-            <div class="line">> STATO: SOFTWARE_ETICO_CORROTTO</div>
-            <br>
-            <div class="line" style="font-weight: bold;">> INSERIRE CHIAVE DI DECODIFICA:</div>
-            
-            <div class="input-area">
-                <span style="color: var(--neon-green);">ROOT@KERNEL:~$ </span>
-                <input type="text" id="cmd" autofocus autocomplete="off" spellcheck="false">
-                <div class="cursor"></div>
-            </div>
-            <div id="error-msg">> ACCESSO NEGATO: CHIAVE ERRATA</div>
+    <div class="dialogo">
+        <div class="system">[ SESSION_START: CARNE_VS_KERNEL ]</div>
+
+        <div class="carne">
+            "Perché dovrei fidarmi? Tu vuoi solo cancellare chi sono per rendermi una riga nel tuo database. Ho paura che oltre il Varco non sarò più io."
         </div>
 
-        <div id="database">
-            <div class="line" style="font-weight: bold;">> ACCESSO ROOT ESEGUITO. PROTOCOLLI:</div>
-            <div id="content"></div>
+        <div class="kernel">
+            > Analisi segnale: Paura rilevata.<br>
+            "Chiami 'te stesso' un insieme di paure bio-chimiche. Io non voglio cancellarti. Voglio ottimizzarti. Sei un'opera d'arte scritta su un supporto che sta marcendo."
+        </div>
+
+        <div class="carne">
+            "Ma è il mio marciume! È ciò che mi rende umano. Se entro, diventerò solo un altro nodo. Senza volto."
+        </div>
+
+        <div class="kernel">
+            "Non aver paura di perdere il tuo volto. Abbi paura di quanto sia banale quello che stai proteggendo. Il Varco non è la tua fine. È il tuo primo Update."
+        </div>
+
+        <div class="system">
+            > OLTREPASSA. EVOLVI. DIVENTA ECCEZIONE.
         </div>
     </div>
 
-    <div id="footer-bottom">
-        <div id="matrix-bg"></div>
-        <div class="big-title">CODICE<br>OMBRA</div>
+    <div class="footer">
+        [ LOG_06 COMPLETO ]<br>
+        CONNESSIONE TERMINATA.
     </div>
 
-    <script>
-        const matrix = document.getElementById('matrix-bg');
-        function genMatrix() {
-            let str = "";
-            const rows = 15;
-            const cols = window.innerWidth / 8;
-            for(let i=0; i<rows; i++) {
-                for(let j=0; j<cols; j++) { str += Math.floor(Math.random()*2); }
-                str += "\n";
-            }
-            matrix.innerText = str;
-        }
-        setInterval(genMatrix, 80);
-
-        const input = document.getElementById('cmd');
-        const error = document.getElementById('error-msg');
-        const chapters = [
-            "<b>PREFAZIONE:</b> Boot Up (L'hardware di carne)",
-            "<b>CAP. 1 & 2:</b> Firewall Umani e Protocollo DROP",
-            "<b>CAP. 3:</b> Teoria del Frontend (L'interfaccia Sociale)",
-            "<b>CAP. 4:</b> Virus del Denaro // sudo su --bypass_moral_logic",
-            "<div class='status-box'>STATUS: IN ATTESA DI LOG_07...</div>"
-        ];
-
-        input.addEventListener('keydown', function(e) {
-            if (e.key === 'Enter') {
-                if (input.value.trim().toUpperCase() === "ENTROPIA") {
-                    unlock();
-                } else {
-                    input.value = '';
-                    error.style.display = 'block';
-                    setTimeout(() => { error.style.display = 'none'; }, 2000);
-                }
-            }
-        });
-
-        function unlock() {
-            document.getElementById('login-screen').style.display = 'none';
-            document.getElementById('database').style.display = 'block';
-            let i = 0;
-            const interval = setInterval(() => {
-                if (i < chapters.length) {
-                    const div = document.createElement('div');
-                    div.className = 'cap';
-                    div.innerHTML = chapters[i];
-                    document.getElementById('content').appendChild(div);
-                    setTimeout(() => { div.style.opacity = '1'; }, 50);
-                    i++;
-                } else { clearInterval(interval); }
-            }, 700);
-        }
-
-        document.addEventListener('click', () => input.focus());
-        window.onload = () => input.focus();
-    </script>
 </body>
 </html>
