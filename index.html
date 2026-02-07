@@ -105,13 +105,9 @@
         }
     </style>
 </head>
-<body onclick="initAudio()">
+<body>
 
     <canvas id="matrix"></canvas>
-
-    <audio id="ambient" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg">
-    </audio>
 
     <div class="main-container">
         <div class="abstract-logo"></div>
@@ -150,32 +146,23 @@
 
         const input = document.getElementById('pass');
         const msg = document.getElementById('msg');
-        const audio = document.getElementById('ambient');
-
-        function initAudio() {
-            audio.volume = 0.2;
-            audio.play().catch(() => {});
-        }
 
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const val = input.value.toUpperCase();
                 
                 if (val === "SINAPSI") {
-                    // DISABILITA INPUT PER EVITARE DOPPI INVITI
                     input.disabled = true;
                     
-                    // MESSAGGIO DI BENVENUTO CON EFFETTO GLOW
+                    // Messaggio d'impatto
                     msg.innerHTML = "<span class='glow-text'>[IDENTITÀ_CONFERMATA: BENVENUTA_CARNE]</span>";
                     msg.style.color = "#0F0";
 
-                    // PRIMA FASE: MESSAGGIO VISIBILE PER 2 SECONDI
                     setTimeout(() => {
                         msg.innerText = "INIZIALIZZAZIONE INTERFACCIA NEURALE...";
                         document.body.style.transition = "2s";
                         document.body.style.filter = "brightness(0)";
                         
-                        // SECONDA FASE: REINDIRIZZAMENTO DOPO IL FADE OUT
                         setTimeout(() => { 
                             window.location.href = "prefazione.html"; 
                         }, 1500);
