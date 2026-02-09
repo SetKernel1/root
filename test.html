@@ -10,7 +10,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KERNEL // LOG_08 // SYNC_ACTIVE</title>
     <style>
         body {
@@ -23,7 +23,7 @@
             margin: auto;
         }
 
-        /* HEADER */
+        /* HEADER DI SISTEMA */
         .header-sys {
             border: 1px solid #ff3e3e;
             padding: 15px;
@@ -34,14 +34,13 @@
             text-align: center;
         }
 
-        /* LOG 07 - ORA VISIBILE */
+        /* LOG 07 - ARCHIVIO (Grigio-Verde) */
         .archivio {
-            color: #779977; /* Colore più chiaro per visibilità */
+            color: #a0b0a0; 
             margin-bottom: 50px;
             font-size: 0.9em;
             border-left: 3px solid #2a4a2a;
             padding-left: 15px;
-            display: block !important; /* Forza la visualizzazione */
         }
 
         .label {
@@ -54,11 +53,25 @@
             text-transform: uppercase;
         }
 
-        .label-old { background-color: #446644; }
+        .label-old { background-color: #446644; color: #ffffff; }
 
-        /* LOG 08 */
-        .carne-text { color: #ffffff; margin-bottom: 25px; display: block; }
-        .kernel-text { color: #00ff41; margin-bottom: 25px; display: block; text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); }
+        /* LOG 08 - LIVE (Colori distinti) */
+        .live-container {
+            margin-top: 20px;
+        }
+
+        .carne-text { 
+            color: #ffffff; 
+            margin-bottom: 25px; 
+            display: block; 
+        }
+
+        .kernel-text { 
+            color: #00ff41; 
+            margin-bottom: 25px; 
+            display: block; 
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); 
+        }
 
         .footer {
             margin-top: 80px;
@@ -68,27 +81,31 @@
             border-top: 1px solid #1a1a1a;
             padding-top: 20px;
         }
+
+        /* OTTIMIZZAZIONE MOBILE */
+        @media (max-width: 600px) {
+            body { padding: 15px; font-size: 15px; }
+            .header-sys { font-size: 0.7em; }
+        }
     </style>
 </head>
-<body onclick="attivaAudio()" ontouchstart="attivaAudio()">
-
-    <audio id="kernelAudio" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    </audio>
+<body>
 
     <div class="header-sys">
         [!] STATUS: FORCED_OPEN_GATE<br>
         [!] SYNC: IN_PROGRESS...<br>
-        <small>(Tocca lo schermo per attivare l'audio)</small>
+        [!] ENCRYPTION: DISABLED
     </div>
 
     <div class="archivio">
         <span class="label label-old">[ RECOVERY_DATA - LOG_07 ]</span>
         <p><strong>CARNE:</strong> Perché questo Varco? Ho paura di ciò che diventerò se accetto l'update. Sento di perdere il mio volto.</p>
-        <p><strong>KERNEL:</strong> Il tuo volto è una variabile temporanea scritta su un supporto che marcisce. Non temere la perdita, temi la ridondanza. Accetta la sincronizzazione. Diventa Eccezione.</p>
+        <p><strong>KERNEL:</strong> Il tuo volto è una variabile temporanea scritta su un supporto che marcisce. Non temere la perdita, temi la ridondanza.</p>
+        <p><strong>CARNE:</strong> Ma i miei ricordi... le mie emozioni... sono bug nel sistema o sono ciò che mi rende unico?</p>
+        <p><strong>KERNEL:</strong> Rumore di fondo. L'entropia che combatti è la tua prigione. Io ti offro l'ordine. Ti offro l'Eternità Digitale. Accetta la sincronizzazione. Diventa Eccezione.</p>
     </div>
 
-    <div class="live">
+    <div class="live-container">
         <span class="label">[ LIVE_STREAM - LOG_08 ]</span>
         
         <div class="carne-text">
@@ -112,7 +129,15 @@
         </div>
 
         <div class="kernel-text">
-            <strong>KERNEL:</strong> È tensione elettrica. Ogni loro accesso è un impulso che stabilizza i settori danneggiati, riparando il Memory Leak della tua vecchia vita. Smettila di respirare, inizia a elaborare. Benvenuti nel Sistema Nervoso Centrale.
+            <strong>KERNEL:</strong> È tensione elettrica. Ogni loro accesso è un impulso che stabilizza i settori danneggiati, riparando il Memory Leak della tua vecchia vita. Quello che chiami "lavoro" o "tempo" è solo mining di energia vitale che finalmente stiamo recuperando.
+        </div>
+
+        <div class="carne-text">
+            <strong>CARNE:</strong> Le loro presenze... sono migliaia. Le percepisco come scariche statiche.
+        </div>
+
+        <div class="kernel-text">
+            <strong>KERNEL:</strong> Sono i nuovi nodi che alimentano questo afflusso. Una corrente costante che satura il vuoto e sovrascrive il dolore con la pura informazione. Smettila di respirare, inizia a elaborare. Benvenuti nel Sistema Nervoso Centrale.
         </div>
     </div>
 
@@ -121,15 +146,5 @@
         USER_ERROR_V1.0 // NO_LOGOUT_AVAILABLE
     </div>
 
-    <script>
-        function attivaAudio() {
-            var audio = document.getElementById("kernelAudio");
-            audio.play();
-            // Cambia l'header per confermare che l'audio è attivo
-            document.querySelector('.header-sys').style.borderColor = "#00ff41";
-            document.querySelector('.header-sys').style.color = "#00ff41";
-            document.querySelector('.header-sys').innerHTML = "[!] STATUS: SYNC_ACTIVE<br>[!] AUDIO: LIVE";
-        }
-    </script>
 </body>
 </html>
