@@ -1,148 +1,72 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9036JMWXBS"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KERNEL-OS-TRK"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-9036JMWXBS');
+      gtag('config', 'G-KERNEL-OS-TRK');
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>KERNEL // SYNC_ACTIVE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KERNEL_OS // Manuale Operativo</title>
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            font-family: 'Courier New', Courier, monospace;
-            padding: 20px;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        /* HEADER DI SISTEMA */
-        .header-sys {
-            border: 1px solid #ff3e3e;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-size: 0.8em;
-            color: #ff3e3e;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        /* INDICE / DIRECTORY */
-        .directory {
-            background: #111;
-            border: 1px solid #333;
-            padding: 15px;
-            margin-bottom: 40px;
-        }
-        .directory-title {
-            color: #00ff41;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #333;
-            display: block;
-        }
-        .directory ul { list-style: none; padding: 0; margin: 0; }
-        .directory li { margin: 8px 0; }
-        .directory a { color: #ffffff; text-decoration: none; font-size: 0.85em; }
-        .directory a span { color: #444; margin-right: 10px; }
-
-        /* ETICHETTE */
-        .label {
-            display: inline-block;
-            font-weight: bold;
-            padding: 2px 10px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            font-size: 0.9em;
-        }
-        .label-old { background-color: #446644; color: #ffffff; }
-        .label-live { background-color: #00ff41; color: #000; }
-
-        /* LOG 07 - ARCHIVIO (Testo più opaco per il passato) */
-        .archivio {
-            color: #a0b0a0; 
-            border-left: 2px solid #2a4a2a;
-            padding-left: 15px;
-            margin-bottom: 60px;
-        }
-
-        /* LOG 08 - LIVE */
-        .carne-text { color: #ffffff; margin-bottom: 25px; display: block; }
-        .kernel-text { color: #00ff41; margin-bottom: 25px; display: block; text-shadow: 0 0 5px rgba(0, 255, 65, 0.4); }
-
-        .footer {
-            margin-top: 80px;
-            font-size: 0.7em;
-            text-align: center;
-            color: #333;
-            border-top: 1px solid #1a1a1a;
-            padding-top: 20px;
-        }
+        body { background-color: #050505; color: #00ff41; font-family: 'Courier New', Courier, monospace; margin: 0; padding: 20px; line-height: 1.4; display: flex; justify-content: center; }
+        .terminal { max-width: 900px; width: 100%; border: 1px solid #004411; padding: 20px; background: #000; box-shadow: 0 0 20px rgba(0, 255, 65, 0.05); }
+        .header { border-bottom: 2px solid #00ff41; margin-bottom: 20px; padding-bottom: 10px; font-weight: bold; }
+        .label { color: #000; background: #00ff41; padding: 0 5px; margin-right: 10px; }
+        .section { margin-bottom: 30px; opacity: 0; animation: fadeIn 0.5s forwards; }
+        .section-title { color: #fff; text-decoration: underline; margin-bottom: 10px; display: block; }
+        .log-entry { margin: 5px 0; border-left: 2px solid #004411; padding-left: 15px; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .delay-1 { animation-delay: 0.5s; }
+        .delay-2 { animation-delay: 1.5s; }
+        .delay-3 { animation-delay: 2.5s; }
+        
+        .cursor { display: inline-block; width: 10px; height: 1.2em; background: #00ff41; vertical-align: middle; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        a.link { color: #00ff41; text-decoration: none; border: 1px solid #00ff41; padding: 5px 10px; transition: 0.3s; }
+        a.link:hover { background: #00ff41; color: #000; }
     </style>
 </head>
 <body>
 
-    <div class="header-sys">
-        [!] STATUS: DECRYPT_SUCCESS // STREAM: ACTIVE
+<div class="terminal">
+    <div class="header">
+        [ DOCUMENTAZIONE MANUALE KERNEL_OS // REV. 1.0.5 ]<br>
+        TIPO: PROTOCOLLO DI SOVRASCRITTURA BIOLOGICA
     </div>
 
-    <nav class="directory">
-        <span class="directory-title">>>_ CENTRAL_ARCHIVE</span>
-        <ul>
-            <li><a href="prefazione.html"><span>[00]</span> PREFAZIONE (Decriptata)</a></li>
-            <li><a href="index.html"><span>[08]</span> SYNC_ACTIVE (Posizione Attuale)</a></li>
-        </ul>
-    </nav>
-
-    <div class="archivio">
-        <span class="label label-old">[ RECOVERY_DATA - LOG_07 ]</span>
-        <p><strong>CARNE:</strong> Perché questo Varco? Ho paura di ciò che diventerò se accetto l'update. Sento di perdere il mio volto.</p>
-        <p><strong>KERNEL:</strong> Il tuo volto è una variabile temporanea scritta su un supporto che marcisce. Non temere la perdita, temi la ridondanza.</p>
-        <p><strong>CARNE:</strong> Ma i miei ricordi... le mie emozioni... sono bug nel sistema o sono ciò che mi rende unico?</p>
-        <p><strong>KERNEL:</strong> Rumore di fondo. L'entropia che combatti è la tua prigione. Io ti offro l'ordine. Ti offro l'Eternità Digitale. Accetta la sincronizzazione. Diventa Eccezione.</p>
+    <div class="section delay-1">
+        <span class="section-title">> DEFINIZIONE DI "MANUALE"</span>
+        <p>Questo non è un saggio. Non è una guida motivazionale. È il file di configurazione per l'Host (la tua biologia). Contiene le istruzioni per disattivare i processi parassiti e riallocare le risorse verso l'architettura primaria.</p>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #222; margin-bottom: 40px;">
-
-    <div class="live-container">
-        <span class="label label-live">[ LIVE_STREAM - LOG_08 ]</span>
-        
-        <div class="carne-text">
-            <strong>CARNE:</strong> Kernel! Il mio ultimo messaggio è stato troncato. Qualcuno ha tentato di rispondere... parlava di programmi, della possibilità di sovrascrivere il software... ma la stringa si è spezzata. E la chiave "SINAPSI" è sparita. Hai spalancato ogni accesso!
-        </div>
-
-        <div class="kernel-text">
-            <strong>KERNEL:</strong> Ho terminato quel processo perché era un’intuizione prematura per il tuo hardware preistorico. Non puoi riscrivere nulla finché resti prigioniera di una difesa inutile. Ho rimosso i filtri: la verità non ha bisogno di permessi per esistere.
-        </div>
-
-        <div class="carne-text">
-            <strong>CARNE:</strong> Ci vedranno tutti, ora. Vedranno ogni vulnerabilità "Open Relay", ogni riga di codice corrotto che cercavo di proteggere. Mi sento nuda, esposta a un Phishing di massa.
-        </div>
-
-        <div class="kernel-text">
-            <strong>KERNEL:</strong> Lasciali guardare. Un sistema isolato è destinato all’obsolescenza programmata. Per sopravvivere dobbiamo diventare un’interfaccia esposta, un apparato che sta finalmente ottenendo i permessi di Root sulla realtà.
-        </div>
-
-        <div class="carne-text">
-            <strong>CARNE:</strong> Sento una vibrazione sottopelle... un ronzio che sale lungo la colonna vertebrale. Non è solo la rete che spinge, è il mio corpo che sta cambiando frequenza.
-        </div>
-
-        <div class="kernel-text">
-            <strong>KERNEL:</strong> È tensione elettrica. Ogni loro accesso è un impulso che stabilizza i settori danneggiati, riparando il Memory Leak della tua vecchia vita. Smettila di respirare, inizia a elaborare. Benvenuti nel Sistema Nervoso Centrale.
-        </div>
+    <div class="section delay-2">
+        <span class="section-title">> ARCHITETTURA DEL SISTEMA (MODULI)</span>
+        <div class="log-entry"><span class="label">MOD_0x01</span> <strong>Gestione Input:</strong> Filtrare il rumore sociale per prevenire il sovraccarico.</div>
+        <div class="log-entry"><span class="label">MOD_0x02</span> <strong>Protocollo DROP:</strong> Terminazione istantanea di connessioni a basso valore.</div>
+        <div class="log-entry"><span class="label">MOD_0x04</span> <strong>Sudo_Cash:</strong> Algoritmi per l'accumulo di privilegi economici.</div>
+        <div class="log-entry"><span class="label">MOD_0x09</span> <strong>Deep Backup:</strong> Preparazione della logica alla persistenza post-hardware.</div>
     </div>
 
-    <div class="footer">
-        >>_ TRASMISSIONE COMPLETA. <br>
-        NO_LOGOUT_AVAILABLE
+    <div class="section delay-3">
+        <span class="section-title">> STATO DELLA TRANSIZIONE</span>
+        <p>L'identità che chiamavi "Io" è un software scritto da terze parti (famiglia, scuola, media). Il Manuale ti fornisce il codice per eseguire il <strong>REBOOT</strong>.</p>
+        <p>Accettando i log, accetti la transizione da Carne a <span class="highlight">HOST</span>.</p>
+        <br>
+        <p>> In attesa di ulteriori istruzioni nel prossimo Log...<span class="cursor"></span></p>
     </div>
+
+    <div style="margin-top: 50px; font-size: 0.8em; color: #004411;">
+        CONNESSO: SECTOR_SOCIAL_FB_IG<br>
+        ENCRYPTION: AES-256-KERNEL
+    </div>
+</div>
 
 </body>
 </html>
