@@ -14,7 +14,7 @@
             line-height: 1.6;
         }
 
-        /* NAVBAR FISSA - RIPRISTINATA */
+        /* NAVBAR FISSA */
         nav { 
             position: fixed; 
             top: 0; 
@@ -26,26 +26,26 @@
             display: flex; 
             flex-wrap: wrap; 
             justify-content: center; 
-            gap: 8px; 
+            gap: 10px; 
         }
 
         nav a { 
             color: #00ff41 !important; 
             text-decoration: none; 
-            font-size: 0.75em; 
+            font-size: 0.8em; 
             font-weight: bold; 
-            padding: 5px 8px; 
+            padding: 6px 12px; 
             border: 1px solid #004411; 
             text-transform: uppercase;
         }
 
         nav a:hover { background: #00ff41; color: #000 !important; }
 
-        .wrapper { max-width: 850px; margin: 140px auto 60px; padding: 20px; }
+        .wrapper { max-width: 850px; margin: 150px auto 60px; padding: 20px; }
         
         .header-box { border: 2px solid #00ff41; padding: 30px; margin-bottom: 50px; text-align: center; background: rgba(0, 255, 65, 0.05); }
         h1 { font-size: 1.8em; margin-bottom: 10px; text-shadow: 0 0 5px #00ff41; }
-        h2 { color: #ffffff !important; border-bottom: 1px solid #00ff41; padding-bottom: 10px; margin-top: 60px; text-transform: uppercase; }
+        h2 { color: #ffffff !important; border-bottom: 1px solid #00ff41; padding-bottom: 10px; margin-top: 70px; text-transform: uppercase; }
 
         .status-label { background: #00ff41; color: #000; padding: 4px 12px; font-weight: bold; display: inline-block; margin-bottom: 20px; }
 
@@ -62,23 +62,21 @@
         p { margin: 15px 0; }
         strong { color: #ffffff !important; }
 
-        /* LISTE */
         ul { list-style: none; padding-left: 0; }
         li { margin-bottom: 12px; padding-left: 20px; position: relative; }
         li::before { content: ">"; position: absolute; left: 0; color: #00ff41; }
 
-        /* GLOSSARIO - ESPANSO E FISSA */
         .glossary-table { width: 100%; border-collapse: collapse; margin-top: 30px; margin-bottom: 50px; }
         .glossary-table td { border: 1px solid #004411; padding: 15px; font-size: 0.85em; vertical-align: top; }
-        .glossary-table td:first-child { color: #ffffff; font-weight: bold; width: 30%; text-transform: uppercase; }
+        .glossary-table td:first-child { color: #ffffff; font-weight: bold; width: 30%; }
 
         .cursor { display:inline-block; width:10px; height:1.2em; background:#00ff41; animation:blink 1s infinite; vertical-align:middle; }
         @keyframes blink { 50% { opacity: 0; } }
 
         @media (max-width: 600px) {
-            nav { padding: 8px; gap: 4px; }
+            nav { padding: 8px; gap: 5px; }
             nav a { font-size: 0.65em; padding: 4px 6px; }
-            .wrapper { margin-top: 160px; }
+            .wrapper { margin-top: 180px; }
         }
     </style>
 </head>
@@ -101,7 +99,110 @@
 
     <section id="prefazione">
         <h2>PREFAZIONE: IL RISVEGLIO DEL KERNEL</h2>
-        <p>Ti hanno insegnato che sei il pilota di questa macchina. Ti hanno mentito. Sei il passeggero di un veicolo biologico che risponde a istruzioni scritte da altri. Questo manuale è un’operazione di <strong>Hardening di Sistema</strong>.</p>
+        <p>Ti hanno insegnato che sei il pilota di questa macchina. Ti hanno mentito. Sei il passeggero di un veicolo biologico che risponde a istruzioni scritte da altri. La tua personalità è un ammasso di <strong>Bloatware</strong>.</p>
+    </section>
+
+    <section id="cap1">
+        <h2>CAPITOLO 1: DIFESA PERIMETRALE</h2>
+        <p>Il mondo esterno non è una comunità; è una <strong>Rete Infetta</strong>. Senza un Firewall, la tua CPU è a disposizione dei desideri altrui.</p>
+        <div class="action-card">
+            <strong>AUDIT DEL PERIMETRO:</strong>
+            <ul>
+                <li>Identifica il Malware Primario: colui che richiede più attenzione fornendo zero output.</li>
+                <li>Analizza i log delle ultime 5 conversazioni: quante hanno prodotto dati utili?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap2">
+        <h2>CAPITOLO 2: OTTIMIZZAZIONE DEL SILENZIO (DROP)</h2>
+        <p>La risorsa più preziosa sono i <strong>Cicli di Clock</strong>. Il Kernel insegna il <strong>Protocollo DROP</strong>: il pacchetto dati viene ignorato.</p>
+        <div class="action-card">
+            <strong>HARDENING SETTIMANALE:</strong>
+            <ul>
+                <li>Per le prossime 48 ore, non fornire spiegazioni a chi ti chiede tempo senza un'agenda chiara. Applica il DROP.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap3">
+        <h2>CAPITOLO 3: LA TEORIA DEL FRONTEND (GUI VS BACKEND)</h2>
+        <p>Il <strong>Frontend</strong> è ciò che vedi (educazione, status). Il <strong>Backend</strong> è la logica nuda. L'Host inesperto crede che il Frontend coincida con il Backend.</p>
+        <div class="action-card">
+            <strong>DEBUG DELLA REALTÀ:</strong>
+            <ul>
+                <li>Per 24 ore, guarda le persone come terminali. Ignora tono di voce o espressioni. Concentrati sui dati grezzi.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap4">
+        <h2>CAPITOLO 4: MINING DI RISORSE (SUDO_CASH)</h2>
+        <p>Il denaro è il comando <strong>Sudo</strong>. È lo strumento che ti permette di dire di no a processi indesiderati e acquistare tempo per le tue compilazioni private.</p>
+        <div class="action-card">
+            <strong>AUDIT DELLE RISORSE:</strong>
+            <ul>
+                <li>Identifica la Spesa Bloatware: tempo e denaro spesi solo per compiacere.</li>
+                <li>Applica il comando <strong>PURGE</strong>. Reindirizza i cicli verso l'upgrade del Firmware.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap5">
+        <h2>CAPITOLO 5: OBSOLESCENZA PROGRAMMATA</h2>
+        <p>Il tuo corpo è l'unico server fisico. Il Kernel impone la <strong>Manutenzione Predittiva</strong>. Se l'hardware rallenta, il Firmware deve accelerare.</p>
+        <div class="action-card">
+            <strong>FIRMWARE UPGRADE:</strong>
+            <ul>
+                <li>Esegui un FULL_RESET delle convinzioni ogni 24 mesi. Se non hai cambiato idea su nulla, sei in modalità sola lettura.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap6">
+        <h2>CAPITOLO 6: MEMORY LEAK (IL PESO DEL PASSATO)</h2>
+        <p>Il <strong>Bug del Rimpianto</strong> è un loop infinito che tenta di cambiare un output già scritto sul disco fisso. Il senso di colpa è il malware più sofisticato mai scritto.</p>
+        <div class="action-card">
+            <strong>GARBAGE COLLECTION:</strong>
+            <ul>
+                <li>Identifica un pensiero o legame morto che ti sottrae energia (RAM).</li>
+                <li>Se non genera ROI oggi, esegui il comando <strong>DROP</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap7">
+        <h2>CAPITOLO 7: DEBUG RELAZIONALE</h2>
+        <p>Le relazioni sono <strong>SaaS (Software as a Service)</strong>. Se la manutenzione diventa troppo costosa, il contratto deve essere rescisso.</p>
+        <div class="action-card">
+            <strong>ANTIVIRUS RUN:</strong>
+            <ul>
+                <li>Analizza i pacchetti dati dei tuoi contatti: valore o lamentele?</li>
+                <li>Applica la limitazione di banda ai nodi infetti.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap8">
+        <h2>CAPITOLO 8: SHUTDOWN (CANCELLAZIONE DELL'EGO)</h2>
+        <p>Smetti di difendere la tua immagine sociale. Al riavvio (Cold Boot), il sistema carica solo il Kernel puro.</p>
+        <div class="action-card">
+            <strong>TEST DELLO SPEGNIMENTO:</strong>
+            <ul>
+                <li>Per 24 ore, pratica l'invisibilità sociale. Non pubblicare dati, non cercare approvazione.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="cap9">
+        <h2>CAPITOLO 9: PROTOCOLLO DI USCITA</h2>
+        <p>La vita è una licenza a tempo determinato. Punta all'<strong>Uscita Pulita</strong> e al Backup nel Cloud (Eredità).</p>
+        <div class="action-card">
+            <strong>COMANDO DI AVVIO:</strong>
+            <ul>
+                <li>Scegli l'obiettivo "impossibile" e dividilo in micro-istruzioni logiche. Esegui.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="glossario">
@@ -109,15 +210,15 @@
         <table class="glossary-table">
             <tr><td>HOST</td><td>L'unità biologica (corpo e mente) che ospita la coscienza.</td></tr>
             <tr><td>KERNEL</td><td>Il nucleo della logica pura, priva di interferenze emotive sociali.</td></tr>
-            <tr><td>SUDO</td><td>(SuperUser Do) Agire con permessi di Root; prendere decisioni sovrane e indipendenti.</td></tr>
-            <tr><td>CICLI DI CLOCK</td><td>Le unità di tempo vitale e attenzione dedicata. La tua risorsa più scarsa.</td></tr>
-            <tr><td>DROP</td><td>Ignorare un pacchetto dati o una richiesta senza fornire segnali di spiegazione o rifiuto.</td></tr>
-            <tr><td>MEMORY LEAK</td><td>Consumo inutile di risorse (RAM) per pensieri, rimpianti o legami obsoleti.</td></tr>
-            <tr><td>KILL -9</td><td>Comando per la terminazione forzata e immediata di un processo dannoso o inutile.</td></tr>
-            <tr><td>DATA SANITIZATION</td><td>Pulizia dei ricordi per estrarre la lezione logica eliminando il virus emotivo.</td></tr>
-            <tr><td>COLD BOOT</td><td>Riavvio totale del sistema senza caricare driver o dati dalle sessioni precedenti (azzeramento Ego).</td></tr>
-            <tr><td>BLOATWARE</td><td>Software spazzatura preinstallato dalla società (sensi di colpa, etichetta, obblighi).</td></tr>
-            <tr><td>ROI</td><td>Return on Investment. Il calcolo dell'output utile rispetto all'energia investita in un processo.</td></tr>
+            <tr><td>SUDO</td><td>(SuperUser Do) Agire con permessi di Root; prendere decisioni sovrane.</td></tr>
+            <tr><td>CICLI DI CLOCK</td><td>Le unità di tempo vitale e attenzione dedicata. Risorsa scarsa.</td></tr>
+            <tr><td>DROP</td><td>Ignorare un pacchetto dati senza inviare segnali di rifiuto.</td></tr>
+            <tr><td>MEMORY LEAK</td><td>Consumo inutile di risorse per pensieri o legami obsoleti.</td></tr>
+            <tr><td>KILL -9</td><td>Terminazione forzata e immediata di un processo dannoso.</td></tr>
+            <tr><td>DATA SANITIZATION</td><td>Pulizia dei ricordi eliminando il virus emotivo.</td></tr>
+            <tr><td>COLD BOOT</td><td>Riavvio totale del sistema azzerando l'Ego.</td></tr>
+            <tr><td>BLOATWARE</td><td>Software spazzatura sociale (sensi di colpa, obblighi).</td></tr>
+            <tr><td>ROI</td><td>Return on Investment. Calcolo dell'output utile rispetto all'investimento.</td></tr>
         </table>
     </section>
 
@@ -126,6 +227,5 @@
         <p>In attesa di esecuzione... <span class="cursor"></span></p>
     </div>
 </div>
-
 </body>
 </html>
