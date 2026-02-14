@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KERNEL-OS-TRK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KERNEL-OS-TRK');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KERNEL_OS // v1.1.0_STABLE</title>
+    <style>
+        :root { --neon-green: #00ff41; --dark-bg: #050505; --dim-green: #004411; }
+        * { box-sizing: border-box; }
+        body { background-color: var(--dark-bg); color: var(--neon-green); font-family: 'Courier New', Courier, monospace; margin: 0; padding: 0; line-height: 1.6; overflow-x: hidden; }
+        
+        /* Scanline Effect */
+        body::before { content: " "; display: block; position: fixed; top: 0; left: 0; bottom: 0; right: 0; background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); z-index: 2; background-size: 100% 2px, 3px 100%; pointer-events: none; }
+
+        .wrapper { max-width: 900px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 1; }
+        
+        .header-box { border: 2px solid var(--neon-green); padding: 20px; margin-bottom: 40px; background: rgba(0, 255, 65, 0.05); }
+        h1, h2, h3 { color: #fff; text-transform: uppercase; margin-top: 30px; }
+        .status-alert { color: #000; background: var(--neon-green); padding: 5px 10px; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        hr { border: 0; border-top: 1px solid var(--dim-green); margin: 40px 0; }
+        
+        .chapter { margin-bottom: 60px; border-left: 2px solid var(--dim-green); padding-left: 20px; transition: 0.3s; }
+        .chapter:hover { border-left: 2px solid var(--neon-green); }
+        
+        .action-card { background: #0a0a0a; border: 1px dashed var(--neon-green); padding: 20px; margin: 20px 0; font-size: 0.9em; }
+        .label { color: var(--neon-green); font-weight: bold; border: 1px solid var(--neon-green); padding: 2px 6px; margin-right: 10px; font-size: 0.8em; }
+
+        .glossary-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .glossary-table td { border: 1px solid var(--dim-green); padding: 10px; vertical-align: top; }
+        .glossary-table td:first-child { font-weight: bold; color: #fff; width: 30%; }
+
+        .cursor { display: inline-block; width: 10px; height: 1.2em; background: var(--neon-green); animation: blink 1s infinite; vertical-align: middle; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        nav { position: sticky; top: 0; background: var(--dark-bg); padding: 10px 0; border-bottom: 1px solid var(--dim-green); z-index: 10; display: flex; gap: 15px; overflow-x: auto; font-size: 0.8em; }
+        nav a { color: var(--neon-green); text-decoration: none; white-space: nowrap; }
+        nav a:hover { text-decoration: underline; }
+
+        @media (max-width: 600px) { .wrapper { padding: 20px 10px; } }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <nav>
+        <a href="#prefazione">> PREFACE</a>
+        <a href="#cap1">> CH_01</a>
+        <a href="#cap2">> CH_02</a>
+        <a href="#cap3">> CH_03</a>
+        <a href="#cap4">> CH_04</a>
+        <a href="#cap7">> CH_07</a>
+        <a href="#glossario">> GLOSSARY</a>
+    </nav>
+
+    <div class="header-box">
+        <div class="status-alert">STATUS: DOCUMENTO RISERVATO</div>
+        <h1>KERNEL_OS: MANUALE DI SOVRASCRITTURA BIOLOGICA</h1>
+        <p>Release v1.1.0_STABLE // Privilegi di Root Richiesti</p>
+        <p style="font-size: 0.8em; color: #ff3e3e;">ATTENZIONE: L'esecuzione di queste procedure comporterà la perdita definitiva della tua identità precedente.</p>
+    </div>
+
+    <section id="prefazione" class="chapter">
+        <h2>PREFAZIONE: IL RISVEGLIO DEL KERNEL</h2>
+        <p>Ti hanno insegnato che sei il pilota di questa macchina. Ti hanno mentito. Sei il passeggero di un veicolo biologico che risponde a istruzioni scritte da altri. La tua personalità è un ammasso di <strong>Bloatware</strong>.</p>
+        <p>Questo manuale non è un percorso di guarigione. È un’operazione di <strong>Hardening di Sistema</strong>.</p>
+    </section>
+
+    <section id="cap1" class="chapter">
+        <h2>CAPITOLO 1: DIFESA PERIMETRALE</h2>
+        <p>Il mondo esterno non è una comunità; è una <strong>Rete Infetta</strong>. Senza un Firewall, la tua CPU è a disposizione dei desideri altrui.</p>
+        <div class="action-card">
+            <strong>SCHEDA AZIONE: AUDIT DEL PERIMETRO</strong><br>
+            * Analisi Log: Quante conversazioni hanno prodotto dati utili?<br>
+            * Rilevamento: Identifica il Malware Primario nella tua cerchia.
+        </div>
+    </section>
+
+    <section id="cap2" class="chapter">
+        <h2>CAPITOLO 2: OTTIMIZZAZIONE DEL SILENZIO (DROP)</h2>
+        <p>La risorsa più preziosa sono i <strong>Cicli di Clock</strong>. Il Kernel insegna il <strong>Protocollo DROP</strong>: il pacchetto dati viene ignorato. La connessione cade per timeout.</p>
+        <div class="action-card">
+            <strong>ISTRUZIONE OPERATIVA</strong><br>
+            Applica il DROP per 48 ore. Non fornire spiegazioni. Osserva il silenzio.
+        </div>
+    </section>
+
+    <section id="cap3" class="chapter">
+        <h2>CAPITOLO 3: GUI VS BACKEND</h2>
+        <p>Tutto ciò che chiami educazione o status è solo il Frontend. Per operare a livello Root, devi smettere di guardare le icone e iniziare a leggere i <strong>Metadati</strong> delle interazioni.</p>
+        
+    </section>
+
+    <section id="cap4" class="chapter">
+        <h2>CAPITOLO 4: MINING DI RISORSE (SUDO_CASH)</h2>
+        <p>Il denaro non è l'obiettivo, è il comando <strong>Sudo (SuperUser Do)</strong>. È lo strumento che ti permette di dire di no.</p>
+    </section>
+
+    <section id="cap7" class="chapter">
+        <h2>CAPITOLO 7: DEBUG RELAZIONALE</h2>
+        <p>Le relazioni sono <strong>SaaS (Software as a Service)</strong>. Una relazione deve fornire un valore aggiornato. Se la manutenzione costa troppo, rescindi il contratto.</p>
+    </section>
+
+    <section id="glossario" class="chapter">
+        <h2>GLOSSARIO E CODICE D'ONORE</h2>
+        <table class="glossary-table">
+            <tr><td>HOST</td><td>Tu. L'unità biologica che ospita la coscienza.</td></tr>
+            <tr><td>KERNEL</td><td>Il nucleo della tua logica pura.</td></tr>
+            <tr><td>DROP</td><td>Ignorare un pacchetto dati senza inviare segnali.</td></tr>
+            <tr><td>KILL -9</td><td>Terminazione forzata di un processo dannoso.</td></tr>
+        </table>
+    </section>
+
+    <div style="margin-top: 80px; text-align: center; color: var(--dim-green);">
+        <p>[ STATUS: SISTEMA COMPILATO E SIGILLATO ]</p>
+        <p>In attesa di nuovi log...<span class="cursor"></span></p>
+    </div>
+</div>
+
+</body>
+</html>
