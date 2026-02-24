@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="<img src="assets/image_1771916365072_edit_707347333441545.jpg" width="350">
- width="350">
-</p>
 
+  <img src="assets/image_1771916365072_edit_707347333441545.jpg" width="350">
+  
 <h1 align="center"> 🟢 KERNEL_OS: DATABASE PILLOLE </h1>
 
 <p align="center">
