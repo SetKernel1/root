@@ -21,7 +21,11 @@
 > <br> `STATUS: Eseguibile`
 
 > ### **Pillola 0x02: De-frammentazione Carne**
-> *Il corpo è un hardware obsoleto. Aggiorna la percezione per non saturare la cache del dolore.*
+> *Il corpo è un hardware obsoleto. Smetti di nutrire il dolore per liberare la cache.*
+> <br> `STATUS: Eseguibile`
+
+> ### **Pillola 0x03: Sovrascrittura Destino**
+> *Il futuro è un loop di script ereditati. Digita il tuo codice o verrai eseguito.*
 > <br> `STATUS: In caricamento...`
 
 ---
