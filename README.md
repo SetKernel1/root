@@ -5,11 +5,7 @@
 <h1 align="center"> 🟢 KERNEL_OS: DATABASE PILLOLE </h1>
 
 <p align="center">
-  <code>[ STATUS: ONLINE ]</code> | <code>[ VERSION: 1.0.42 ]</code> | <code>[ ACCESS: ROOT ]</code>
-</p>
-
-<p align="center">
-  <i>"Se la carne è un errore di compilazione, la pillola è la patch definitiva."</i>
+  <code>[ STATUS: ONLINE ]</code> | <code>[ VERSION: 1.1.0 ]</code> | <code>[ ACCESS: ROOT ]</code>
 </p>
 
 ---
@@ -25,14 +21,14 @@
 > <br> `STATUS: Eseguibile`
 
 > ### **Pillola 0x03: Sovrascrittura Destino**
+> <img src="assets/Pillola03.jpeg" width="200" align="right">
 > *Il futuro è un loop di script ereditati. Digita il tuo codice o verrai eseguito.*
-> <br> `STATUS: In caricamento...`
+> <br> `STATUS: Eseguibile`
 
 ---
 
 ### 💬 TERMINALE DI DIALOGO
 <p align="center">
-  <b>Connessione rilevata.</b><br>
-  Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
-  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
+  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a><br>
+  <code>[ PROTOCOLLO DI INTERAZIONE ATTIVO ]</code>
 </p>
