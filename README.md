@@ -1,6 +1,6 @@
 <p align="center">
-
   <img src="assets/image_1771916365072_edit_707347333441545.jpg" width="350">
+</p>
   
 <h1 align="center"> 🟢 KERNEL_OS: DATABASE PILLOLE </h1>
 
@@ -13,6 +13,7 @@
 </p>
 
 ---
+
 ### 💊 PILLOLE DI SISTEMA
 
 > ### **Pillola 0x01: Il Bypass dell'Ego**
@@ -29,5 +30,5 @@
 <p align="center">
   <b>Connessione rilevata.</b><br>
   Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
-  <a href="https://github.com/SetKernel1/root/discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
+  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
 </p>
