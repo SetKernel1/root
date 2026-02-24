@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/TUO_USERNAME/TUO_REPOSITORY/main/assets/kernel_logo.png" width="350">
+  <img src="<img src="assets/image_1771916365072_edit_707347333441545.jpg" width="350">
+ width="350">
 </p>
 
 <h1 align="center"> 🟢 KERNEL_OS: DATABASE PILLOLE </h1>
