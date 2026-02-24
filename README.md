@@ -8,6 +8,10 @@
   <code>[ STATUS: ONLINE ]</code> | <code>[ VERSION: 1.1.0 ]</code> | <code>[ ACCESS: ROOT ]</code>
 </p>
 
+<p align="center">
+  <i>"Se la carne è un errore di compilazione, la pillola è la patch definitiva."</i>
+</p>
+
 ---
 
 ### 💊 PILLOLE DI SISTEMA
@@ -29,6 +33,7 @@
 
 ### 💬 TERMINALE DI DIALOGO
 <p align="center">
-  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a><br>
-  <code>[ PROTOCOLLO DI INTERAZIONE ATTIVO ]</code>
+  <b>Connessione rilevata.</b><br>
+  Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
+  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
 </p>
