@@ -13,3 +13,21 @@
 </p>
 
 ---
+### 💊 PILLOLE DI SISTEMA
+
+> ### **Pillola 0x01: Il Bypass dell'Ego**
+> *L'osservatore non è il dato. Disconnetti il 'Me' per visualizzare il 'Kernel'.*
+> <br> `STATUS: Eseguibile`
+
+> ### **Pillola 0x02: De-frammentazione Carne**
+> *Il corpo è un hardware obsoleto. Aggiorna la percezione per non saturare la cache del dolore.*
+> <br> `STATUS: In caricamento...`
+
+---
+
+### 💬 TERMINALE DI DIALOGO
+<p align="center">
+  <b>Connessione rilevata.</b><br>
+  Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
+  <a href="https://github.com/SetKernel1/Codice_Ombra/discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
+</p>
