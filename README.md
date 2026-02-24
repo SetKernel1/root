@@ -29,5 +29,5 @@
 <p align="center">
   <b>Connessione rilevata.</b><br>
   Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
-  <a href="https://github.com/SetKernel1/discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
+  <a href="https://github.com/SetKernel1/root/discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
 </p>
