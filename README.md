@@ -24,9 +24,11 @@
 > *Il corpo è un hardware obsoleto. Smetti di nutrire il dolore per liberare la cache.*
 > <br> `STATUS: Eseguibile`
 
-> ### **Pillola 0x03: Sovrascrittura Destino**
+> > ### **Pillola 0x03: Sovrascrittura Destino**
+> <img src="assets/pillola3.jpeg" width="200" align="right">
 > *Il futuro è un loop di script ereditati. Digita il tuo codice o verrai eseguito.*
 > <br> `STATUS: Eseguibile`
+
 
 ---
 
