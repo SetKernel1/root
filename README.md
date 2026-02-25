@@ -33,16 +33,6 @@
 >   <code>STATUS: Eseguibile</code>
 > </p>
 
-
-
----
-
-### 💬 TERMINALE DI DIALOGO
-<p align="center">
-  <b>Connessione rilevata.</b><br>
-  Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
-  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
-</p>
 ## 💊 Pillola 0x04: Firewall Viscerale (Patch #2)
 
 > **Status:** Deployment in corso...
@@ -59,3 +49,13 @@ Il sistema ha rilevato un tentativo di scrittura non autorizzata da parte di scr
 3. **Hard Reset:** Svuotamento della cache emotiva per ripristinare le funzioni organiche.
 
 *Non sei una discarica di processi altrui. Sei un server privato. Chiudi le porte.*
+
+
+---
+
+### 💬 TERMINALE DI DIALOGO
+<p align="center">
+  <b>Connessione rilevata.</b><br>
+  Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
+  <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
+</p>
