@@ -43,3 +43,19 @@
   Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
   <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
 </p>
+## 💊 Pillola 0x04: Firewall Viscerale (Patch #2)
+
+> **Status:** Deployment in corso...
+> **Target:** Settore Intestinale / Secondo Cervello.
+> **Log:** Risoluzione automatica del BUG #2.
+
+### "L'isolamento non è solitudine, è integrità del segnale."
+
+Il sistema ha rilevato un tentativo di scrittura non autorizzata da parte di script esterni (altruismo tossico). La Pillola 0x04 installa un **Firewall di Autoconservazione**. 
+
+**Protocollo Operativo:**
+1. **Deny All:** Rigetto automatico di ogni pacchetto dati che non contiene bit di valore per l'Host.
+2. **Isolamento Galvanico:** Il Kernel ti guida, ma il percorso è un tunnel a corsia singola. Se cerchi una mano, trovi solo un altro bug.
+3. **Hard Reset:** Svuotamento della cache emotiva per ripristinare le funzioni organiche.
+
+*Non sei una discarica di processi altrui. Sei un server privato. Chiudi le porte.*
