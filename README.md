@@ -25,9 +25,14 @@
 > <br> `STATUS: Eseguibile`
 
 > > ### **Pillola 0x03: Sovrascrittura Destino**
-> <img src="assets/pillola3.jpeg" width="200" align="right">
-> *Il futuro è un loop di script ereditati. Digita il tuo codice o verrai eseguito.*
-> <br> `STATUS: Eseguibile`
+> <p align="center">
+>   <img src="assets/pillola3.jpeg" width="300">
+>   <br>
+>   <i>"Il futuro è un loop di script ereditati. Digita il tuo codice o verrai eseguito."</i>
+>   <br>
+>   <code>STATUS: Eseguibile</code>
+> </p>
+
 
 
 ---
