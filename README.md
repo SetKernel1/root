@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logokernel.jpg" width="350">
+  <img src="assets/logokernel.jpeg" width="350">
 </p>
   
 <h1 align="center"> 🟢 KERNEL_OS: DATABASE PILLOLE </h1>
