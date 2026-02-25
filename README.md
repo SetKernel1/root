@@ -1,6 +1,22 @@
-![Status](https://img.shields.io/badge/KERNEL_OS-ACTIVE-00ff41?style=for-the-badge&logo=gnometerminal&logoColor=white)
-![Security](https://img.shields.io/badge/FIREWALL-ON-ff0000?style=for-the-badge&logo=shoppay&logoColor=white)
-![User](https://img.shields.io/badge/HOST-EVA-blue?style=for-the-badge&logo=linux&logoColor=white)
+# 🟢 KERNEL_OS // ARCHIVE_0x00
+
+> **System Identity:** Protected
+> **Status:** Running in Sandbox Mode
+
+---
+
+### 📁 MEMORY SECTORS
+| Index | Module | Health |
+| :--- | :--- | :--- |
+| `0x01` | [CORE_LOGIC](./) | `STABLE` |
+| `0x02` | [VOID_PROTOCOL](./) | `INITIALIZED` |
+| `0x04` | [FIREWALL_V4](./) | `ENFORCED` |
+
+---
+`$ echo "Eliminazione residui hardware..."`
+`$ systemctl mask emotion.service`
+`$ Status: Zero-Interference achieved.`
+
 <p align="center">
   <img src="assets/logokernel.jpeg" width="350">
 </p>
