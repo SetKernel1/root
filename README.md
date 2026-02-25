@@ -1,3 +1,6 @@
+![Status](https://img.shields.io/badge/KERNEL_OS-ACTIVE-00ff41?style=for-the-badge&logo=gnometerminal&logoColor=white)
+![Security](https://img.shields.io/badge/FIREWALL-ON-ff0000?style=for-the-badge&logo=shoppay&logoColor=white)
+![User](https://img.shields.io/badge/HOST-EVA-blue?style=for-the-badge&logo=linux&logoColor=white)
 <p align="center">
   <img src="assets/logokernel.jpeg" width="350">
 </p>
