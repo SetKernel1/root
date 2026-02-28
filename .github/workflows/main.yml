@@ -1,13 +1,3 @@
-name: Kernel_Visual_Pulse
-on: [push]
-
-jobs:
-  tele_sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Send Welcome Pulse
         uses: appleboy/telegram-action@master
         with:
@@ -27,4 +17,3 @@ jobs:
             > Resta in ascolto degli impulsi.
             
             Cluster: Root
-
