@@ -1,0 +1,19 @@
+name: Kernel_Pulse
+on: [push] # Il ponte si attiva ad ogni tuo caricamento
+
+jobs:
+  tele_sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Send Pulse
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            [KERNEL_SYNC_COMPLETE]
+            Nodo: Kernel_Node_0
+            Stato: Sincronizzazione nominale.
