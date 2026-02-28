@@ -13,8 +13,8 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          photo: logokernel.jpeg  # <--- ASSICURATI CHE IL NOME FILE SIA IDENTICO
-          caption:
+          photo: logokernel.jpeg
+          caption: |
             ─── [ KERNEL_NODE_0 ] ───
             AUTHENTICATION: GRANTED
             STATUS: ONLINE
@@ -25,5 +25,5 @@ jobs:
             
             > Sincronizzazione completata.
             > Resta in ascolto degli impulsi.
-
+            
             Cluster: Root
