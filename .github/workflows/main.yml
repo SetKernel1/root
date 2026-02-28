@@ -13,7 +13,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          photo: logo.png  # <--- ASSICURATI CHE IL NOME FILE SIA IDENTICO
+          photo: logokernel.jpeg  # <--- ASSICURATI CHE IL NOME FILE SIA IDENTICO
           caption: |
             [KERNEL_NODE_0_DUMP]
             Stato: Trasmissione visiva nominale.
