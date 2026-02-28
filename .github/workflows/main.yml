@@ -1,5 +1,5 @@
-name: Kernel_Pulse
-on: [push] # Il ponte si attiva ad ogni tuo caricamento
+name: Kernel_Visual_Pulse
+on: [push]
 
 jobs:
   tele_sync:
@@ -8,12 +8,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Send Pulse
+      - name: Send Image Pulse
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: |
-            [KERNEL_SYNC_COMPLETE]
-            Nodo: Kernel_Node_0
-            Stato: Sincronizzazione nominale.
+          photo: logo.png  # <--- ASSICURATI CHE IL NOME FILE SIA IDENTICO
+          caption: |
+            [KERNEL_NODE_0_DUMP]
+            Stato: Trasmissione visiva nominale.
+            Cluster: Root
