@@ -14,7 +14,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           photo: logokernel.jpeg  # <--- ASSICURATI CHE IL NOME FILE SIA IDENTICO
-          caption:           caption: |
+          caption:
             ─── [ KERNEL_NODE_0 ] ───
             AUTHENTICATION: GRANTED
             STATUS: ONLINE
