@@ -1,20 +1,16 @@
 name: Kernel_Dynamic_Pulse
 on: [push]
-
 jobs:
   tele_sync:
     runs-on: ubuntu-latest
     steps:
-      - name: 🛰️ Sync Repository
-        uses: actions/checkout@v3
-
+      - uses: actions/checkout@v3
       - name: 🖼️ Pulse Visual
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           photo: logokernel.jpeg
-
       - name: 📟 Pulse Message
         uses: appleboy/telegram-action@master
         with:
@@ -22,8 +18,6 @@ jobs:
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           message: |
             ─── [ KERNEL_UPDATE ] ───
-            
             LOG: ${{ github.event.head_commit.message }}
-            
             OPERATORE: ${{ github.actor }}
             STATO: SINCRONIZZATO
