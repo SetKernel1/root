@@ -7,8 +7,30 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      # 1) Invio dell'immagine
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           photo: logokernel.jpeg
+
+      # 2) Invio del messaggio di benvenuto
+      - uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            ================================
+                 KERNEL NODE 0 - ONLINE
+            ================================
+
+            Benvenuto nel sistema, operatore.
+            Il nodo è stato avviato correttamente.
+            Tutti i moduli risultano sincronizzati.
+
+            Stato: ATTIVO
+            Priorità: MASSIMA
+            Protocollo: INIZIALIZZATO
+
+            Monitoraggio in tempo reale avviato.
+            In attesa di ulteriori istruzioni.
