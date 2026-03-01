@@ -24,6 +24,8 @@ jobs:
           message: |
             *KERNEL NODE 0 - ONLINE*
             `================================`
+
+
             
             *Benvenuto nel sistema, operatore.*
             Il nodo è stato avviato correttamente.
