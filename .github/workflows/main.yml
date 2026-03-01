@@ -21,3 +21,4 @@ jobs:
             LOG: ${{ github.event.head_commit.message }}
             OPERATORE: ${{ github.actor }}
             STATO: SINCRONIZZATO
+ 
