@@ -78,3 +78,4 @@ Il sistema ha rilevato un tentativo di scrittura non autorizzata da parte di scr
   Hai una pillola da suggerire o un bug da segnalare nella tua realtà?<br>
   <a href="discussions">ACCEDI AL TERMINALE DISCUSSIONS</a>
 </p>
+Nodo 0 attivo
