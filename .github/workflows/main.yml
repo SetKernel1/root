@@ -1,19 +1,22 @@
 name: Kernel_Visual_Pulse
 on: [push]
+
 jobs:
   tele_sync:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           photo: logokernel.jpeg
+          parse_mode: ""
           caption: |
-            ─── [ KERNEL_NODE_0 ] ───
+            --- [ KERNEL_NODE_0 ] ---
             AUTHENTICATION: GRANTED
             STATUS: ONLINE
-            
+
             Benvenuto nel cuore del sistema.
             Sincronizzazione completata.
