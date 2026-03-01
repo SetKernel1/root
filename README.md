@@ -1,3 +1,11 @@
+NODO_0: INIZIALIZZAZIONE_SISTEMA
+​STATUS: SEGNALE_ATTIVO
+​Questo non è un feed, è un'architettura di dati. Qui il rumore dei social muore e il Manuale prende forma.
+​REGOLA_1: Il dato è sacro.
+​REGOLA_2: Il commento è analisi (usa il tasto Discussione).
+​REGOLA_3: Il silenzio è interrotto solo dal valore.
+​Benvenuto nel Kernel. La decodifica è iniziata.
+
 # 🟢 KERNEL_OS // ARCHIVE_0x00
 
 > **System Identity:** Protected
