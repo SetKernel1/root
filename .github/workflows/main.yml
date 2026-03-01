@@ -1,4 +1,4 @@
-name: Kernel_Visual_Pulse
+name: Kernel_Dynamic_Pulse
 on: [push]
 
 jobs:
@@ -20,17 +20,10 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          format: markdown
           message: |
-            *KERNEL NODE 0 - ONLINE*
-            `================================`
-
-
+            ─── [ KERNEL_UPDATE ] ───
             
-            *Benvenuto nel sistema, operatore.*
-            Il nodo è stato avviato correttamente.
+            LOG: ${{ github.event.head_commit.message }}
             
-            > Stato: **ATTIVO**
-            > Protocollo: **INIZIALIZZATO**
-            
-            _In attesa di ulteriori istruzioni._
+            OPERATORE: ${{ github.actor }}
+            STATO: SINCRONIZZATO
