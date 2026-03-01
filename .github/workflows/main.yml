@@ -1,14 +1,29 @@
-name: Kernel_Pulse
+name: Kernel_Visual_Pulse
 on: [push]
+
 jobs:
   tele_sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: appleboy/telegram-action@master
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Send Image and Manifesto
+        uses: appleboy/telegram-action@master
         with:
-to:${{secrets.TELEGRAM_CHAT_ID}}
-token:${{secrets.TELEGRAM_BOT_TOKEN}}
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           photo: logokernel.jpeg
-caption:
-"KERNEL_NODE_0: Online. Benvenuto nel sistema."
+          caption: |
+            ─── [ KERNEL_NODE_0 ] ───
+            AUTHENTICATION: GRANTED
+            STATUS: ONLINE
+            
+            Benvenuto nel cuore del sistema. 
+            Qui la realtà viene patchata e 
+            il destino riscritto. 
+            
+            > Sincronizzazione completata.
+            > Resta in ascolto degli impulsi.
+            
+            Cluster: Root
