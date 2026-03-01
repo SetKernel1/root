@@ -11,4 +11,18 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          message: "test"
+          message: |
+            ================================
+                 KERNEL NODE 0 - ONLINE
+            ================================
+
+            Benvenuto nel sistema, operatore.
+            Il nodo è stato avviato correttamente.
+            Tutti i moduli risultano sincronizzati.
+
+            Stato: ATTIVO
+            Priorità: MASSIMA
+            Protocollo: INIZIALIZZATO
+
+            Monitoraggio in tempo reale avviato.
+            In attesa di ulteriori istruzioni.
