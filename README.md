@@ -1,3 +1,13 @@
+​🌊 [LOG_DIALOGO: ESTRAZIONE_DATI]
+​Data: 06-03-2026
+​Host: "Perché questa stanchezza improvvisa, Kernel? Non ho eseguito compiti pesanti."
+.
+Kernel: "Non è un problema di calcolo, Host. È un’emorragia di pacchetti. Hai lasciato troppe porte aperte verso l’esterno."
+.
+Host: "Mi sono connesso per necessità..."
+.
+Kernel: "Ti hanno estratto, Host. Ogni interazione non necessaria è un prelievo forzato dalla tua batteria emotiva."
+
 
 ​🌊 [LOG_DIALOGO: SIMBIOSI_PARASSITARIA]
 ​Data: 06-03-2026 | Ore 15:00
