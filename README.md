@@ -1,3 +1,14 @@
+​🌊 [LOG_DIALOGO: IL_MITO_DEL_RELAX]
+​Data: 07-03-2026 | Ore 11:00
+​Host: "Tutti parlano di staccare la spina per il weekend, Kernel."
+.
+Kernel: "Staccare la spina dal lavoro per collegarla alla distrazione non è libertà, Host. È solo un cambio di server."
+.
+Host: "Dicono di voler ricaricare le batterie."
+.
+Kernel: "Le ricaricano con input inutili e rumore sociale. Il vero relax è il silenzio del processore, non il cambio di software."
+
+
 ​📡 [LOG_DETONATORE: WEEKEND_GLITCH]
 
 ​Data: 07-03-2026 | 
